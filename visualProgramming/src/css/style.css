@@ -1,0 +1,90 @@
+
+body,html {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Century Gothic'
+}
+
+.container {
+  position: relative;
+  padding: 10px;
+  width: 100%;
+  height: 500px;
+  border: 1px solid dimgray;
+}
+
+div {
+  fill: transparent;
+  stroke: black;
+}
+
+input {
+  flex: 1;
+  width: 100%;
+  padding: 5px;
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+p {
+  margin: 5px;
+}
+
+.block {
+  display: flex;
+  user-select: none;
+  position: absolute;
+  padding: 10px;
+  width: 150px;
+  /* height: 100px; */
+  border: 1px solid black;
+  padding-top: 35px;
+}
+.draghandle {
+  color: white;  
+  padding : 2px 10px; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: #252525;
+}
+.block select {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.joints {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: dimgray;
+  border-radius: 50%;
+}
+
+.block #input-1 {
+  left: -5px;
+  top: 30px;
+}
+.block #input-2 {
+  left: -5px;
+  top: 60px;
+}
+.block #output-1 {
+  right: -5px;
+  top: 45px;
+}
+
+
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Rockets</title>
+  <style>
+    * {
+      font-family: 'Century Gothic';
+      user-select: none;
+    }
+    body {
+      margin: 20px;
+      /* color: rgb(255, 165, 0) */
+    }
+    canvas {
+      margin: 0;
+      border: 1px solid black;
+    }
+    .controls {
+      padding: 10px;
+    }
+    .controls label {
+      padding: 10px;
+      margin: 5px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.4)
+    }
+    select {
+      padding: 5px;
+      border-radius: 5px;    
+      outline: none;  
+      border: 1px solid rgba(0,0,0,0.4);
+    }
+    button {
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 5px;    
+      outline: none;
+      background-color: white;
+      border: 1px solid rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="c"></canvas>
+  <p id="time"></p>
+
+  <div class="controls">
+    <select id="speed">
+      <option value="0">Pause</option>
+      <option value="1">Speed 1x</option>
+      <option value="2">Speed 2x</option>
+      <option value="3">Speed 3x</option>
+      <option value="4">Speed 4x</option>
+      <option value="5">Speed 5x</option>
+      <option value="6">Speed 6x</option>
+      <option value="7">Speed 7x</option>
+      <option value="8">Speed 8x</option>
+    </select>
+
+    <button id="nextCycle">Do Next Cycle</button>
+  </div>
+
+  <script src="../src/lib/Vector.js"></script>
+  <script src="./js/globals.js"></script>
+  <script src="./js/dna.js"></script>
+  <script src="./js/rockets.js"></script>
+  <script src="./js/population.js"></script>
+  <script src="./js/index.js"></script>
+
+</body>
+</html>
