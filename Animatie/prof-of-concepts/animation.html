@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Animatie</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      border: 0;
+      padding: 0
+    }
+
+    .box {
+      position: absolute;
+      margin: 0 auto;
+      width: 200px;
+      height: 150px;
+      border: 5px solid orangered;
+      padding: 20px;
+      animation: box 5s infinite alternate;
+    }
+
+    /* @keyframes box {
+      0% { left : 20% }
+      100% { left : 50% }
+    } */
+  </style>
+
+</head>
+<body>
+  
+  <div class="box">I AM A GOOD BOX</div>
+
+
+  <script>
+    lerp = function(norm, min, max) {
+      return (max - min) * norm + min;
+    }
+    tween = function(pos, target, speed) {
+      if (speed == undefined) speed = 20;
+      pos += (target - pos) / speed;
+      return pos;
+    }
+    window.onload = function () {
+      let box = document.getElementsByClassName('box')[0];
+
+      let ani_data = [
+        {
+          name : 'left',
+          keyframes : [
+            {time : 0, value : 1000},
+            {time : 100, value : 10}
+          ]
+        }
+      ]
+
+      let animationString = '';
+
+      
+      let from = 0;
+      function animate() {
+
+        for (let i = 0; i < ani_data.length; i++) {
+
+        const data = ani_data[i];
+        from = tween(from, data.keyframes[0].value, 50);
+
+        box.style[data.name] = from + 'px';
+        console.log(from)
+        // console.log(data);
+        // animationString = `keyframes box { ${data.keyframes[0].time}% { ${data.name} : ${data.keyframes[0].value} } }`
+        // console.log(animationString);      
+        }
+
+        requestAnimationFrame(animate)
+      }
+      animate();
+
+
+    }
+  </script>
+</body>
+</html>

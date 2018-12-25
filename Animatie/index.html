@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Animatie</title>
+
+  <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <section class="animation-stage">
+      <div class="test-box" id="test-box">Animatie</div>
+    </section>
+
+    <!-- timeline -->
+    <section class="timeline">
+      <section class="props">
+        <!-- <div class="value">left : <input type="text" id="left"/></div> -->
+      </section>
+
+      <section class="keyframe-data" id="keyframe-data">
+        <div class="dragger" id="dragger">
+          <p id="lerpValue"></p>
+        </div>
+
+        <div class="nodes">
+          <!-- <div class="node"></div> -->
+        </div>
+      </section>
+
+    </section>
+  </div>
+
+  <script src="./src/utils.js"></script>
+  <script src="./src/Node.js"></script>
+  <script src="./src/Props.js"></script>
+  <script src="./src/main.js"></script>
+</body>
+</html>

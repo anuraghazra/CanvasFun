@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+body,html {
+  overflow: hidden
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+
+.animation-stage {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  float: left;
+  border-bottom: 1px solid black;
+}
+
+
+.timeline {
+  display: flex;
+  width: 100%;
+  height: 30vh;
+  float: left;
+  
+}
+/* .timeline > div { flex: 1 } */
+
+
+.test-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-family: 'Century Gothic';
+  font-weight: bold;
+  color: rgb(109, 155, 255);
+  padding-top: 10px;
+  margin: 0 auto;
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  border: 3px solid rgb(146, 180, 255);
+  text-align: center;
+}
+
+.props {
+  height: 100%;
+  flex-basis: 30%;
+}
+.value {
+  border: 1px solid white;
+  width: 100%;
+  height: fit-content;
+  padding: 5px;
+  background-color: rgb(158, 160, 255);
+  color: white;
+  overflow: auto
+}
+.value:nth-child(odd) {
+  background-color: rgb(121, 123, 255);
+}
+
+.value input {
+  width: 60%;
+  margin-left: 10px;
+  float: right;
+  outline: none;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  
+}
+
+.keyframe-data {
+  position: relative;
+  flex-basis: 80%;
+  height: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+#lerpValue {
+  position: absolute;
+  left: -15px;
+  top: -12%;
+  font-size: 12px;
+  pointer-events: none;
+  user-select: none;
+  background-color: deepskyblue;
+  padding: 5px;
+  color: white;
+  border-radius: 5px;
+}
+.dragger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width : 2px;
+  height: 100%;
+  background-color: deepskyblue;
+  pointer-events: none;
+}
+
+
+.nodes {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  height: inherit;
+}
+.node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  transform: translate(-30%, 0%);
+  border-radius: 50%;
+  background-color: rgba(220, 20, 60, 0.753);
+  pointer-events: none;
+}
