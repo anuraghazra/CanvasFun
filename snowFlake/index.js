@@ -3,7 +3,7 @@ window.onload = function () {
   let c = new Candy();
   c.createCanvas(WINDOW_WIDTH, WINDOW_HEIGHT);
 
-  let current = new Particle(250,  0);
+  let current = new Particle(250,  1);
   let snowflakes = [];
 
 
@@ -24,7 +24,9 @@ window.onload = function () {
     }
   }
 
-  c.smooth();
+  c.smooth('high');
+
+  let t = 0;
   function animate() {
     c.clear(rgba(5, 134, 255));
 
@@ -34,17 +36,23 @@ window.onload = function () {
     c.rotate(Math.PI/6);
     
     while(!current.finished() && !current.intersects(snowflakes)) {
-      current.update(c);   
+      current.update();
     }
 
-    if (current.pos.x < WINDOW_WIDTH/2) {
-      snowflakes.push(current);
-      current = new Particle(250, 0);
-    }
+    snowflakes.push(current);
+    current = new Particle(250, 1);
     renderMirrors();
 
     c.pop(); //--
 
+    if(snowflakes[snowflakes.length -1].pos.x >= current.pos.x) {
+      t++;
+      if(t > 20) {
+        snowflakes = [];
+        t = 0;
+      }
+    }
+    
     c.loop(animate);
   }
   animate();
