@@ -13,7 +13,7 @@ let oSCtx = oSCanvas.getContext('2d');
 
 // document.body.appendChild(oSCanvas)
 
-let url = '/TextParticles/src/images/mypic.jpg'
+let url = 'https://anuraghazra.github.io/CanvasFun/TextParticles/src/images/mypic.jpg'
 let points = [];
 let maxParticles = 10;
 let pointSize = 6;
