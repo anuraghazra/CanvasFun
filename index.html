@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CanvasFun</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <style>
+    * {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div class="container">
+    <h3>CanvasFun</h3>
+    <h5>HTML5 Canvas Projects</h5>
+
+    <p>Most Of The Projects I Made In My Fun Times.</p>
+
+    <div class="row" id="data-container"></div>
+
+    <h5>Libaries Used</h5>
+    <ul class="collection">
+      <li class="collection-item"><a href="https://github.com/anuraghazra/Candy.js">Candy.js</a></li>
+      <li class="collection-item"><a href="https://github.com/anuraghazra/CanvasFun/blob/master/src/lib/Vector.js">Vector.js</a></li>
+    </ul>
+  </div>
+
+  <script>
+    window.onload = function () {
+      let data = [
+        {
+          titile : '10PrintLine',
+          demo : 'https://anuraghazra.github.io/CanvasFun/10PrintLine',
+          src : 'https://github.com/anuraghazra/CanvasFun/tree/master/10PrintLine'
+        },
+        {
+          titile : 'ChaosGame',
+          demo : 'https://anuraghazra.github.io/CanvasFun/ChaosGame',
+          src : 'https://github.com/anuraghazra/CanvasFun/tree/master/ChaosGame'
+        },
+        {
+          titile : 'circlePattern',
+          demo : 'https://anuraghazra.github.io/CanvasFun/circlePattern',
+          src : 'https://github.com/anuraghazra/CanvasFun/tree/master/circlePattern'
+        },
+        {
+          titile : 'EvolutionAquerium',
+          demo : 'https://anuraghazra.github.io/EvolutionAquerium',
+          src : 'https://github.com/anuraghazra/EvolutionAquerium/tree/master'
+        },
+        {
+          titile : 'fireworks',
+          demo : 'https://anuraghazra.github.io/CanvasFun/fireworks',
+          src : 'https://github.com/anuraghazra/CanvasFun/tree/master/fireworks'
+        },
+        {
+          titile : 'circlePattern',
+          demo : 'https://anuraghazra.github.io/CanvasFun/circlePattern',
+          src : 'https://github.com/anuraghazra/CanvasFun/tree/master/circlePattern'
+        },
+        {
+          titile : 'fractalTree',
+          demo : 'https://anuraghazra.github.io/CanvasFun/fractalTree',
+          src : 'https://github.com/anuraghazra/CanvasFun/tree/master/fractalTree'
+        },
+        {
+          titile : 'isometric3D',
+          demo : 'https://anuraghazra.github.io/CanvasFun/isometric3D',
+          src : 'https://github.com/anuraghazra/CanvasFun/tree/master/isometric3D'
+        },
+        {
+          titile : 'particleShift',
+          demo : 'https://anuraghazra.github.io/CanvasFun/particleShift',
+          src : 'https://github.com/anuraghazra/CanvasFun/tree/master/particleShift'
+        },
+        {
+          titile : 'particleSystem',
+          demo : 'https://anuraghazra.github.io/CanvasFun/particleSystem',
+          src : 'https://github.com/anuraghazra/CanvasFun/tree/master/particleSystem'
+        },
+        {
+          titile : 'phyllotaxis',
+          demo : 'https://anuraghazra.github.io/CanvasFun/phyllotaxis',
+          src : 'https://github.com/anuraghazra/CanvasFun/tree/master/phyllotaxis'
+        },
+        {
+          titile : '7SegmentDisplay',
+          demo : 'https://anuraghazra.github.io/CanvasFun/sevenSegmentDisplay',
+          src : 'https://github.com/anuraghazra/CanvasFun/tree/master/sevenSegmentDisplay'
+        },
+        {
+          titile : 'smartRockets',
+          demo : 'https://anuraghazra.github.io/CanvasFun/smartRockets',
+          src : 'https://github.com/anuraghazra/CanvasFun/tree/master/smartRockets'
+        },
+        {
+          titile : 'snowFlake',
+          demo : 'https://anuraghazra.github.io/CanvasFun/snowFlake',
+          src : 'https://github.com/anuraghazra/CanvasFun/tree/master/snowFlake'
+        },
+        {
+          titile : 'TextParticles',
+          demo : 'https://anuraghazra.github.io/CanvasFun/TextParticles',
+          src : 'https://github.com/anuraghazra/CanvasFun/tree/master/TextParticles'
+        },
+      ];
+      let dataContainer = document.getElementById('data-container');
+
+      let temp = data.map((i, index) => {
+        return `
+        <div class="col s12 m4">
+          <div class="card blue lighten-1">
+            <div class="card-content white-text">
+              <span class="card-title">${index+1}) ${i.titile}</span>
+            </div>
+            <div class="card-action">
+              <a class="white-text" href="${i.demo}">Demo</a>
+              <a class="white-text" href="${i.src}">Source</a>
+            </div>
+          </div>
+        </div>
+      `
+      });
+
+      dataContainer.innerHTML = temp.join('');
+    }
+  </script>
+</body>
+</html>
