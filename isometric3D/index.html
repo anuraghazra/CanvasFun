@@ -4,12 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>3D Isometric</title>
+  <style>
+    canvas {
+      outline: 1px solid black;
+    }
+
+    #c2 {
+      /* width: 500px */
+      transform : scale(100.0);
+      outline: 0px solid black;
+    }
+  </style>
 </head>
 <body>
   
   <canvas id="c"></canvas>
 
+  <canvas id="c2"></canvas>
+
+  <script src="./Tile.js"></script>
+  <script src="./Block.js"></script>
+  <script src="./Grid.js"></script>
+  <script src="./canvas2.js"></script>
   <script src="./index.js"></script>
+
 </body>
 </html>

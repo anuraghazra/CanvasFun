@@ -2,9 +2,9 @@ function Firework(x, y) {
   this.hue = random(0, 360);
 
   if (x && y) {
-    this.firework = new Particle(x, CANVAS_HEIGHT, this.hue)
+    this.firework = new Particle(x, CANVAS_HEIGHT, this.hue);
   } else {
-    this.firework = new Particle(random(CANVAS_WIDTH), CANVAS_HEIGHT, this.hue)
+    this.firework = new Particle(random(CANVAS_WIDTH), CANVAS_HEIGHT, this.hue);
   }
   this.exploded = false;
 

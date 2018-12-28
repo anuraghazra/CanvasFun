@@ -28,11 +28,11 @@ function getPixelCoords() {
   buffer32 = [];
 
   // while (newPos.length < particles.length) {
-  //   particles.splice(c.utils.random(0, particles.length - 1), 1)
+  //   particles.splice(random(0, particles.length - 1), 1)
   // }
   while (newPos.length > particles.length) {
-    particles.push(new Point(particles[c.utils.randomInt(0,particles.length-1)].pos.x,
-                             particles[c.utils.randomInt(0,particles.length-1)].pos.y, 
+    particles.push(new Point(particles[randomInt(0,particles.length-1)].pos.x,
+                             particles[randomInt(0,particles.length-1)].pos.y, 
                              'rgba(255,255,255,0.9)', true))
   }
   let requireLen = (particles.length - newPos.length);
@@ -42,8 +42,8 @@ function getPixelCoords() {
     for (let i = 0; i < particles.length; i++) {
       let p = particles[i];
       if(p.active) {
-        p.target.x = c.utils.random(CANVAS_WIDTH);
-        p.target.y = c.utils.random(CANVAS_HEIGHT);
+        p.target.x = random(CANVAS_WIDTH);
+        p.target.y = random(CANVAS_HEIGHT);
         p.color = 'rgba(255,255,255,0.3)';
         p.active = false;
       }
@@ -55,8 +55,8 @@ function getPixelCoords() {
     if (i > requireLen) {
       let p = particles[i];
       for (let j = 0; j < newPos.length; j++) {
-        p.acc.x = c.utils.random(-5, 5);
-        p.acc.y = c.utils.random(-5, 5);
+        p.acc.x = random(-5, 5);
+        p.acc.y = random(-5, 5);
         p.target.x = newPos[(i + j) % newPos.length].x;
         p.target.y = newPos[(i + j) % newPos.length].y;
         p.color = 'rgba(255,255,255,0.9)';

@@ -1,39 +1,31 @@
-function rand(min, max) {
-  return min + Math.random() * max;
-}
-
-let canvas = document.querySelector('#c');
-let ctx = canvas.getContext('2d');
-let width = canvas.width;
-let height = canvas.height;
-let c = new Candy(canvas);
+let c = new Candy();
+c.createCanvas(800, 600);
 
 window.onload = function() {
   
-  let img = new Image();
-  img.src = '/particleSystem/texture/emitter1.png';
+  c.trypreload();
+  let img = c.loadImage('https://anuraghazra.github.io/CanvasFun/particleSystem/texture/emitter1.png');
+  let ps;
 
-  let ps = new ParticleSystem(width/2,400, img);
+  c.preload = function() {
+    ps = new ParticleSystem(CANVAS_WIDTH/2, 400, img);
+    animate();
+    console.log('ok')
+  }
 
-  let mouseX = 0;
-  let mouseY = 0;
-  canvas.addEventListener('mousemove', function(e) {
-    mouseX = e.offsetX;
-    mouseY = e.offsetY;
-  });
-  
+  c.noStroke();
+
   function animate() {
-    ctx.fillStyle = '#151515'
-    ctx.fillRect(0,0,width,height);
-
-    ps.origin.x = mouseX+rand(0,30);
+    c.clear('#151515');
+    
+    ps.origin.x = mouseX+random(0,30);
     ps.origin.y = mouseY;
     for (let i = 0; i < 5; i++) {
       ps.addParticle();
     }
-    ps.update(ctx);
+    ps.update();
 
     requestAnimationFrame(animate);
   }
-  animate();
+
 }

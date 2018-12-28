@@ -4,8 +4,8 @@ function Point(x, y, color, active) {
   this.acc = new Vector(0, 0);
   this.target = new Vector(x, y);
 
-  this.maxSpeed = 5;
-  this.maxForce = 1;
+  this.maxSpeed = 8;
+  this.maxForce = 5;
   this.color = color;
 
   this.active = active;
@@ -14,8 +14,8 @@ function Point(x, y, color, active) {
   this.behaviour = function (fleetarget) {
     let arrive = this.arrive(this.target);
     let flee = this.flee(fleetarget);
-    flee.mult(0.3);
-    arrive.mult(0.2);
+    flee.mult(0.2);
+    arrive.mult(0.1);
 
     this.applyForce(arrive);
     this.applyForce(flee);
@@ -28,8 +28,8 @@ function Point(x, y, color, active) {
     let desire = Vector.sub(this.target, this.pos);
     let d = desire.mag();
     let speed = this.maxSpeed;
-    if (d < 100) {
-      speed = c.utils.map(d, 0, 100, 0, this.maxSpeed)
+    if (d < 50) {
+      speed = map(d, 0, 50, 0, this.maxSpeed)
     }
     desire.setMag(speed);
     let steer = Vector.sub(desire, this.vel);
@@ -40,7 +40,7 @@ function Point(x, y, color, active) {
   this.flee = function (target) {
     let desire = Vector.sub(target, this.pos);
     let d = desire.mag();
-    if (d < 65) {
+    if (d < 10) {
       // desire.setMag(this.maxSpeed);
       desire.mult(-1);
       let steer = Vector.sub(desire, this.vel);
@@ -58,13 +58,11 @@ function Point(x, y, color, active) {
   }
 
   this.shake = function () {
-    // console.log(this.active)
     if (!this.active) {
-      this.acc = new Vector(c.utils.random(-0.2, 0.2),
-        c.utils.random(-0.2, 0.2))
+      this.acc = new Vector(random(-0.2, 0.2), random(-0.2, 0.2))
     }
-    this.acc.x = c.utils.random(-0.1, 0.1);
-    this.acc.y = c.utils.random(-0.1, 0.1);
+    this.acc.x = random(-0.1, 0.1);
+    this.acc.y = random(-0.1, 0.1);
   }
 
   this.render = function (ctx) {

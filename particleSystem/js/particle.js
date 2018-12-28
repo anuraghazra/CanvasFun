@@ -1,7 +1,7 @@
 function Particle(x, y, radius, img) {
   this.pos = new Vector(x, y);
-  this.vel = new Vector(rand(-0.5, 1), rand(0, -3));
-  this.acc = new Vector(rand(-0.5, 0.5), rand(-0.2, 2));
+  this.vel = new Vector(random(-0.5, 1), random(0, -3));
+  this.acc = new Vector(random(-0.5, 0.5), random(-0.2, 2));
 
   this.img = img;
 
@@ -50,16 +50,13 @@ function Particle(x, y, radius, img) {
 
   this.render = function() {
     c.push();
-    c.blendMode('lighter');
+    c.blendMode(ADD);
     if (this.alpha < 0.09) {
-      c.blendMode('destination-out');
+      c.blendMode(DEST_OUT);
     }
     c.alpha(this.alpha);
     c.image(this.img, this.pos.x, this.pos.y, 32, 32);
     c.pop();
-    // rr.noStroke();
-    // rr.fill(255,255,255,this.alpha);
-    // rr.circle(this.pos.x, this.pos.y, this.size,);
   }
 
 }

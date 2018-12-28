@@ -924,9 +924,6 @@ randomHSLA = function(a) {
   return hsla(h, s, l, a);
 }
 
-norm = function(value, min, max) {
-  return (value - min) / (max - min);
-}
 
 lerp = function(norm, min, max) {
   return (max - min) * norm + min;

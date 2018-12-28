@@ -77,6 +77,11 @@ Vector.prototype = {
   magSq: function () {
     return (this.x * this.x + this.y * this.y);
   },
+  setXY : function (x, y) {
+    this.x = x;
+    this.y = y;
+    return this;
+  },
   setMag: function (value) {
     this.normalize();
     this.mult(value);

@@ -56,12 +56,8 @@ function Point(x, y, color) {
   }
 
   this.render = function() {
-    ctx.beginPath();
-    // console.log(this.color)
-    ctx.fillStyle = this.color;
-    // ctx.arc(this.pos.x, this.pos.y, pointSize, 0, Math.PI*2)
-    ctx.fillRect(this.pos.x, this.pos.y, pointSize,pointSize);
-    ctx.fill();
-    ctx.closePath();
+    c.fill(this.color);
+    // c.arc(this.pos.x, this.pos.y, pointSize, 0, Math.PI*2)
+    c.rect(this.pos.x, this.pos.y, pointSize,pointSize);
   }
 }

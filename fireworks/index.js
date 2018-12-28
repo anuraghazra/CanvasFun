@@ -1,5 +1,5 @@
 const c = new Candy();
-c.createCanvas(window.innerWidth, window.innerHeight-30);
+c.createCanvas(WINDOW_WIDTH, WINDOW_HEIGHT-90);
 
 let gravity = new Vector(0, 0.15);
 
@@ -21,7 +21,7 @@ c.canvas.addEventListener('mousedown', function() {
 
 c.noStroke();
 function animate() {
-  c.clear(15,0.3);
+  c.clear(15, 0.3);
   c.noStroke();
   
   if (random(1) < 0.1) {
@@ -51,5 +51,7 @@ function animate() {
   }
 
 
-  c.loop();
+  c.loop(animate);
 }
+
+animate();

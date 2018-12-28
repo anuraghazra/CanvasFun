@@ -1,53 +1,19 @@
-function norm(value, min, max) {
-  return (value - min) / (max - min);
-}
-
-function lerp(norm, min, max) {
-  return (max - min) * norm + min;
-}
-
-function map(value, sMin, sMax, dMin, dMax) {
-  return lerp(norm(value, sMin, sMax), dMin, dMax)
-}
-
-function dist(px, py, qx, qy) {
-  let dx = px - qx;
-  let dy = py - qy;
-  return Math.sqrt(dx * dx + dy * dy);
-}
-
-function random(min, max) {
-  if (max === undefined) {
-    return Math.random() * min;
-  } else {
-    return min + Math.random() * (max - min);
-  }
-}
-function randomInt(min, max) {
-  return Math.floor(min + Math.random() * (max - min + 1))
-}
-
-
-function renderImage(x, y, w, h) {
-  oSCtx.drawImage(img, x, y, w, h);
-
-}
-
 function renderText(text, x, y) {
-  oSCtx.fillStyle = 'red';
-  oSCtx.font = '120px cursive';
-  oSCtx.fillText(text, x, y);
-  oSCtx.fill();
+  osc.fill('red');
+  osc.font('120px cursive');
+  osc.text(text, x, y);
+  osc.fill();
 
-  oSCtx.fillStyle = 'blue';
-  oSCtx.font = '120px cursive';
-  oSCtx.fillText('blue', 50, 80);
-  oSCtx.fill();
+  osc.fill('blue');
+  osc.font('120px cursive');
+  osc.text('blue', 50, 80);
+  osc.fill();
 }
 
 function getPixelCoords() {
   let gridX = gridY = pointSize;
-  var idata = oSCtx.getImageData(0, 0, width, height);
+  console.log(osc.ctx)
+  var idata = osc.ctx.getImageData(0, 0, width, height);
   var buffer32 = new Int32Array(idata.data.buffer);
   let colors = [];
   

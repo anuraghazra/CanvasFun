@@ -47,6 +47,7 @@ let size = document.getElementById('size');
 // window.onclick = generateTree;
 
 
+animate();
 function animate() {
   c.clear('rgba(25,25,25,1)');
 

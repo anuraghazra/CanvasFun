@@ -6,10 +6,10 @@ c.createScreenBuffer('trails');
 
 let points = [];
 
-points[0] = new Point(0, 100, 0.03, 'rgba(255,0,0,0.2)');
-points[1] = new Point(0, 150, 0.1, 'rgba(0,255,255,0.2)');
-points[2] = new Point(0, 10, 0.2, 'rgba(255,0,0,0.5)');
-points[3] = new Point(0, 250, -0.005, 'rgba(0,255,0,0.2)');
+points.push(new Point(0, 100, 0.03, 'rgba(255,0,0,0.2)'));
+points.push(new Point(0, 150, 0.1, 'rgba(0,255,255,0.2)'));
+points.push(new Point(0, 10, 0.2, 'rgba(255,0,0,0.5)'));
+points.push(new Point(0, 250, -0.005, 'rgba(0,255,0,0.2)'));
 
 function Point(angle, r, time, color) {
   this.angle = angle;
@@ -33,10 +33,12 @@ Point.prototype.render = function () {
 }
 
 let t = 0;
+
+
+let osc = c.screenBuffers.trails
+osc.strokeWeight(0.5);
+
 animate();
-
-c.screenBuffers.trails.strokeWeight(0.5);
-
 function animate() {
   c.clear('black');
 
@@ -45,18 +47,18 @@ function animate() {
     points[i].update();
     points[i].render();
   
-    c.screenBuffers.trails.push();
-    c.screenBuffers.trails.stroke(points[i].color);
-    c.screenBuffers.trails.translate(250, 250);
-    c.screenBuffers.trails.begin();
-    c.screenBuffers.trails.from(points[0].x, points[0].y);
-    c.screenBuffers.trails.to(points[(i)%points.length].x, points[(i)%points.length].y);
-    c.screenBuffers.trails.stroke();
-    c.screenBuffers.trails.close();
-    c.screenBuffers.trails.pop();
+    osc.push();
+    osc.stroke(points[i].color);
+    osc.translate(250, 250);
+    osc.begin();
+    osc.from(points[0].x, points[0].y);
+    osc.to(points[(i)%points.length].x, points[(i)%points.length].y);
+    osc.stroke();
+    osc.close();
+    osc.pop();
     
   }
-  c.putScreenBuffer(c.screenBuffers.trails);
+  c.putScreenBuffer(osc);
 
   c.loop(animate);
 }

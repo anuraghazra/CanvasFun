@@ -1,70 +1,45 @@
-let canvas = document.getElementById('c');
-let ctx = canvas.getContext('2d');
-
-
-let width = canvas.width = 500;
-let height = canvas.height = 500;
-
-// OS canvas
-let oSCanvas = document.createElement('canvas');
-oSCanvas.width = width;
-oSCanvas.height = height;
-let oSCtx = oSCanvas.getContext('2d');
-
-// document.body.appendChild(oSCanvas)
-
-let url = 'https://anuraghazra.github.io/CanvasFun/TextParticles/src/images/mypic.jpg'
+let c = new Candy('#c', 500, 500);
+let width = CANVAS_WIDTH;
+let height = CANVAS_HEIGHT;
 let points = [];
 let maxParticles = 10;
 let pointSize = 6;
 
-let mx,my;
-let mouse = new Vector(0,0);
+c.createScreenBuffer('osc');
+let osc = c.screenBuffers.osc;
 
-canvas.addEventListener('mousemove', function(e) {
-  mx = e.offsetX;
-  my = e.offsetY;
-})
+window.onload = function () {
+  let url = 'https://anuraghazra.github.io/CanvasFun/TextParticles/src/images/mypic.jpg';
 
-let isImageloaded = false;
-let img = new Image();
-img.src = url;
-img.onerror = function() {
-  return;
-}
-img.onload = function() {
-  isImageloaded = true;
-}
+  let mouse = new Vector(0, 0);
 
-let count = 1;
-function animate() {
 
-  if (!isImageloaded) {
-    requestAnimationFrame(animate);
-    return;
+  let img = c.loadImage(url);
+  img.setAttribute('crossOrigin', '');
+  c.trypreload();
+  c.preload = function () {
+    animate();
   }
-  renderImage(25,25,width-100,height-50);
-  
-  if(count > 0) {
-    getPixelCoords();
+
+  c.noStroke();
+  let count = 1;
+  function animate() {
+    c.clear('#151515');
+
+    mouse.setXY(mouseX, mouseY);
+
+    osc.image(img, 25, 25, width - 100, height - 50);
+
+    if (count > 0) getPixelCoords();
+    count--;
+
+    for (let i = 0; i < points.length; i++) {
+      points[i].behaviour(mouse);
+      points[i].update();
+      points[i].render();
+    }
+    c.loop(animate);
   }
-  count--;
-
-  ctx.fillStyle = '#151515'
-  // ctx.fillStyle = 'rgba(0,150,255)'
-  ctx.fillRect(0, 0, width, height);
-  
-
-  mouse = new Vector(mx, my);
-  for (let i = 0; i < points.length; i++) {
-    points[i].behaviour(mouse);
-    points[i].update();
-    points[i].render();
-  }
-  requestAnimationFrame(animate);
-
 
 }
-console.log(points.length);
 
-animate();

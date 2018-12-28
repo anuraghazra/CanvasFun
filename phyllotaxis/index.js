@@ -1,28 +1,28 @@
-const c = new Candy();
+window.onload = function () {
+  const c = new Candy();
+  c.createCanvas(WINDOW_WIDTH, WINDOW_HEIGHT);
 
-c.createCanvas(window.innerWidth, window.innerHeight - 50);
+  let n = 1;
+  let t = 8;
 
-let n = 1;
-let t = 8;
+  c.clear(25);
+  let rotationAngle = random(10, 140);
+  function animate() {
+    let a = n * rotationAngle;
+    let r = t * Math.sqrt(n);
 
-c.clear(25);
-let rotationAngle = random(10,140);
-function animate() {
+    let x = r * Math.cos(a) + CANVAS_WIDTH / 2;
+    let y = r * Math.sin(a) + CANVAS_HEIGHT / 2;
 
-  let a = n * rotationAngle;
-  let r = t * Math.sqrt(n);
+    c.blendMode(ADD);
+    c.fill(hsla(a - r, 80, 50, clamp(n / 255, 0, 1)));
+    c.noStroke();
+    c.circle(x, y, 5);
 
-  let x = r * Math.cos(a) + CANVAS_WIDTH / 2;
-  let y = r * Math.sin(a) + CANVAS_HEIGHT / 2;
-
-  c.blendMode(ADD);
-  c.fill(hsla(a - r, 80, 50, clamp(n/-255, 0,1)));
-  c.noStroke();
-  c.circle(x, y, 5);
-
-  n++
-  c.loop();
-}
-for (let i = 0; i < 50; i++) {
-  animate(); 
+    n++
+    c.loop(animate);
+  }
+  for (let i = 0; i < 50; i++) {
+    animate();
+  }
 }
