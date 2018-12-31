@@ -9,7 +9,7 @@ function Particle(x, y, radius, img) {
   this.alpha = 1;
 
   this.radius = radius;
-  this.dieRate = 0.013
+  this.dieRate = 0.013;
 
   this.update = function () {
     this.vel.add(this.acc);
@@ -51,11 +51,11 @@ function Particle(x, y, radius, img) {
   this.render = function() {
     c.push();
     c.blendMode(ADD);
-    if (this.alpha < 0.09) {
+    if (this.alpha < 0.19) {
       c.blendMode(DEST_OUT);
     }
     c.alpha(this.alpha);
-    c.image(this.img, this.pos.x, this.pos.y, this.size, this.size);
+    c.image(this.img, this.pos.x, this.pos.y, this.radius, this.radius);
     c.pop();
   }
 

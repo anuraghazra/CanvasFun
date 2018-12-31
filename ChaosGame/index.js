@@ -1,5 +1,6 @@
 window.onload = function () {
   let c = new Candy('#c', WINDOW_WIDTH, WINDOW_HEIGHT);
+  c.fullScreen();
 
   let dots = [];
   let current;

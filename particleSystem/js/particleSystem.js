@@ -2,7 +2,12 @@ function ParticleSystem(x, y, img) {
   this.origin = new Vector(x, y);
   this.particles = [];
   this.img = img;
+  this.radius = 32;
 
+  this.setRadius = function (r) {
+    this.radius = r;
+    return this;
+  }
 
   this.addParticle = function (x, y) {
     let p = undefined;
@@ -35,4 +40,6 @@ function ParticleSystem(x, y, img) {
       }
     }
   }
+
+  return this;
 }
