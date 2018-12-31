@@ -24,7 +24,7 @@ let data = [
     img : './thumbnails/fireworks_400x400-min.png',
   },
   {
-    titile : 'Evolution_Aquerium',
+    titile : 'Evolution Aquerium',
     demo : 'https://anuraghazra.github.io/EvolutionAquerium/',
     src : 'https://github.com/anuraghazra/EvolutionAquerium/',
     img : './thumbnails/evolutionAquerium_400x400-min.png',
