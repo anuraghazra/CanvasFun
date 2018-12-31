@@ -1,30 +1,50 @@
-let width = 500;
-let height = 500;
+let width = window.innerWidth-1;
+let height = window.innerHeight-5;
 let canvas = document.getElementById('c');
 let ctx = canvas.getContext('2d');
 canvas.width = width;
 canvas.height = height;
 
-ctx.translate(width / 2 , 250);
+ctx.translate(width / 2 , height/2);
 
 
-let map = [
-  [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0],
-  [2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0],
-  [2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0],
-  [2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0],
-  [2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0],
-  [2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0],
-  [2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0],
-  [2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0],
-  [2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0],
-  [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0],
-];
-let grid = new Grid(10, 10, 50);
+let baseSlider = document.getElementById('base');
+let mouseX;
+let mouseY;
+canvas.addEventListener('mousemove', function (e) {
+  mouseX = e.offsetX;
+  mouseY = e.offsetY;
+})
+// let map = [
+//   [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0],
+//   [2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0],
+//   [2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0],
+//   [2.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 2.0],
+//   [2.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 2.0],
+//   [2.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 2.0],
+//   [2.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 2.0],
+//   [2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0],
+//   [2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0],
+//   [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0],
+// ];
+let grid = new Grid(15, 15, 50);
+let map = grid.createGrid(15, 15);
 
+let angle = 0;
 function animate() {
-  ctx.clearRect(-width/2,-height/2,width, height);
+  ctx.fillStyle = '#555555';
+  ctx.fillRect(-width/2,-height/2, width, height);
 
+  angle = mouseX/10;
+
+  let baseHeight = parseFloat(-baseSlider.value)
+  for (let i = 0; i < map.length; i++) {
+    let row = map[i];
+    for (let j = 0; j < row.length; j++) {
+      map[i][j] = Math.abs(i/j+Math.sin(angle/j+i)+baseHeight)
+    }
+  }
+  grid.applyHeightMap(map);
   grid.render();
 
   requestAnimationFrame(animate)

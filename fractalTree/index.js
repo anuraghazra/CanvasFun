@@ -1,14 +1,19 @@
 const c = new Candy();
-c.createCanvas(window.innerWidth, window.innerHeight - 120);
+c.createCanvas(WINDOW_WIDTH, WINDOW_HEIGHT);
 
-
-let angle1 = document.getElementById('angle1');
-let angle2 = document.getElementById('angle2');
-let slider1 = document.getElementById('leftTrunk');
-let slider2 = document.getElementById('rightTrunk');
-let size = document.getElementById('size');
-
-
+let config = {
+  rightRotation : 0.6,
+  leftRotation : 0.6,
+  rightBranch : 0.5,
+  leftBranch : 0.5,
+  size : 100
+}
+let gui = new dat.GUI();
+gui.add(config, 'rightRotation', -2.0, 2.0, 0.1);
+gui.add(config, 'leftRotation', -2.0, 2.0, 0.1);
+gui.add(config, 'rightBranch', 0.0, 0.7, 0.1);
+gui.add(config, 'leftBranch', 0.0, 0.7, 0.1);
+gui.add(config, 'size', 20, 200, 1);
 
 // let tree = [];
 // let leaves = [];
@@ -52,8 +57,8 @@ function animate() {
   c.clear('rgba(25,25,25,1)');
 
   // for (let i = 0; i < tree.length; i++) {
-  //   tree[i].end.rotate(angle1);
-  //   tree[i].start.rotate(angle2);
+  //   tree[i].end.rotate(rightRotation);
+  //   tree[i].start.rotate(leftRotation);
   //   tree[i].show();
   // }
 
@@ -67,17 +72,12 @@ function animate() {
   c.push();
   c.translate(CANVAS_WIDTH/2, CANVAS_HEIGHT);
   c.blendMode(ADD);
-  branch(size.value);
+  branch(config.size);
   c.pop();
 
   c.loop(animate);
 }
 
-size.onchange = function() {
-  c.clear('rgba(25,25,25,1)');
-
-  // animate()
-}
 
 function branch(len) {
   c.stroke(['crimson', 'brown', 'black']);
@@ -87,12 +87,12 @@ function branch(len) {
 
   if (len > 4) {
     c.push();
-    c.rotate(angle1.value);
-    branch(len * slider1.value);
+    c.rotate(config.rightRotation);
+    branch(len * config.rightBranch);
     c.pop();
     c.push();
-    c.rotate(-angle2.value);
-    branch(len * slider2.value);
+    c.rotate(-config.leftRotation);
+    branch(len * config.leftBranch);
     c.pop();
   }
 }

@@ -1,4 +1,4 @@
-let c = new Candy('#c', 500, 500);
+let c = new Candy('#c', 400, 400);
 
 window.onload = function () {
   let index = 0;
@@ -10,6 +10,7 @@ window.onload = function () {
   // display.add(2);
   // display.add(3);
 
+  c.noStroke();
   function animate() {
     c.clear(25);
 

@@ -6,10 +6,17 @@ function ParticleSystem(x, y, img) {
 
   this.addParticle = function (x, y) {
     let p = undefined;
-    if (x !== undefined && y !== undefined) {
-      p = new Particle(x, y, this.radius, this.img);
+    let img;
+
+    if (this.img instanceof HTMLImageElement) {
+      img = this.img;
     } else {
-      p = new Particle(this.origin.x, this.origin.y, this.radius, this.img);
+      img = this.img[randomInt(this.img.length)]
+    }
+    if (x !== undefined && y !== undefined) {
+      p = new Particle(x, y, this.radius, img);
+    } else {
+      p = new Particle(this.origin.x, this.origin.y, this.radius, img);
     }
     this.particles.push(p);
   }

@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Fractal Tree</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.3/dat.gui.min.js"></script>
+  <script src="https://anuraghazra.github.io/Candy.js/dist/Candy.build.js"></script>
 
   <style>
     * {
@@ -14,60 +16,12 @@
       margin: 0;
       padding: 0;
     }
-
-    div.ui {
-      display: flex;
-      padding: 5px;
-      border-bottom: 2px solid rgb(177, 177, 177);
-    }
-
-    .ui label {
-      text-align: center;
-      flex: 1;
-      padding: 5px;
-      margin: 5px;
-      border-radius: 10px;
-      box-shadow: 0 0 5px 2px rgba(0,0,0,0.1)
-    }
-    .ui label:not(:nth-last-child(4)) {
-      margin-left: 0;
-      margin-right: 5px;
-    }
-    .ui label input {
-      width: 100%;
-      padding: 5px;
-    }
   </style>
 </head>
 
 <body>
 
-  <!-- <canvas id="c"></canvas> -->
-  <div class="ui">
-    <label>
-      <input type="range" id="size" step="0.001" max="200" min="20" value="100">
-      Tree Size
-    </label>
-    <label>
-      <input type="range" id="angle1" step="0.001" max="1" min="-1" value="0.6">
-      Right Angle
-    </label>
-    <label>
-      <input type="range" id="angle2" step="0.001" max="1" min="-1" value="0.6">
-      Left Angle
-    </label>
-    <label>
-      <input type="range" id="leftTrunk" step="0.001" max="0.75" min="-1" value="0.5">
-      Right Length
-    </label>
-    <label>
-      <input type="range" id="rightTrunk" step="0.001" max="0.75" min="-1" value="0.5">
-      Left Length
-    </label>
-  </div>
-
   <script src="../src/lib/Vector.js"></script>
-  <script src="https://anuraghazra.github.io/Candy.js/dist/Candy.build.js"></script>
   <script src="./lib/Branch.js"></script>
   <script src="./index.js"></script>
 
