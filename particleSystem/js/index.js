@@ -1,5 +1,6 @@
 let c = new Candy();
 c.createCanvas(WINDOW_WIDTH, WINDOW_HEIGHT);
+c.fullScreen();
 
 window.onload = function() {
   
