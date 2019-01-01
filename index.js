@@ -72,6 +72,12 @@ let data = [
     img : './thumbnails/snowflake_400x400-min.png',
   },
   {
+    titile : 'KochStar',
+    demo : 'https://anuraghazra.github.io/CanvasFun/KochStar',
+    src : 'https://github.com/anuraghazra/CanvasFun/tree/master/KochStar',
+    img : './thumbnails/kochStar_400x400-min.png',
+  },
+  {
     titile : 'TextParticles',
     demo : 'https://anuraghazra.github.io/CanvasFun/TextParticles',
     src : 'https://github.com/anuraghazra/CanvasFun/tree/master/TextParticles',
