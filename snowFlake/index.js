@@ -2,7 +2,7 @@
 window.onload = function () {
   let c = new Candy();
   c.createCanvas(WINDOW_WIDTH, WINDOW_HEIGHT);
-
+  
   let current = new Particle(250,  1);
   let snowflakes = [];
 

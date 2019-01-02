@@ -5,7 +5,6 @@ let spacing = 25;
 let c = new Candy();
 c.createCanvas(WINDOW_WIDTH, WINDOW_HEIGHT);
 
-
 c.clear(15);
 
 animate();
