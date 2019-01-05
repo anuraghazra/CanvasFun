@@ -1,71 +1,76 @@
 const canvas = document.querySelector('#c');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight - 100;
-
 let text = document.getElementById('text');
-
+canvas.width = WINDOW_WIDTH;
+canvas.height = WINDOW_HEIGHT - 70;
 const c = new Candy(canvas, canvas.width, canvas.height);
 
-
-c.createScreenBuffer('oscandy');
-let oscandy = c.screenBuffers.oscandy;
-
+// offscreen canvas
+let osc = c.createScreenBuffer('osc');
 let particles = [];
 
-let target = new Vector(mouseX, mouseY)
-
-for (let i = 0; i < 1000; i++) {
-  particles.push(new Point(random(CANVAS_WIDTH), random(CANVAS_HEIGHT), 'rgba(255,255,255,0.3)', false));
+// FONTS AND GUI CONFIGS
+let fonts = {
+  'Fugaz One' : "'Fugaz One', cursive",
+  'Charm' : "'Charm', cursive",
+  'Staatliches' : "'Staatliches', cursive",
+  'Lobster' : "'Lobster', cursive",
+  'Shadows Into Light' : "'Shadows Into Light', cursive"
+}
+let config = {
+  "repelRadius": 50,
+  "attractRadius": 100,
+  "maxSpeed" : 8,
+  "maxForce" : 5,
+  "fontFamily" : fonts['Fugaz One']
 }
 
-let bgcolor = 'rgba(155,155,255,1)';
+window.onload = function () {
 
-let textindex = 0;
-let strs = [
-  [ 'Hello', 'rgba(155,155,255,0.3)' ],
-  [ 'i\'m', 'rgba(155,155,255,0.3)' ],
-  [ 'Anurag', 'rgba(155,155,255,0.3)' ],
-  [ 'a', 'rgba(155,155,255,0.3)' ],
-  [ 'creative', 'rgba(155,155,255,0.3)' ],
-  [ 'web', 'rgba(155,155,255,0.3)' ],
-  [ 'designer', 'rgba(155,155,255,0.3)' ],
-  [ 'have ↓ Fun', 'rgba(155,155,255,0.3)' ],
-];
+  // DAT.GUI
+  let gui = new dat.GUI({autoPlace : false});
+  gui.close();
+  gui.add(config, 'repelRadius', 0, 200, 1);
+  gui.add(config, 'attractRadius', 0, 200, 1);
+  gui.add(config, 'maxSpeed', 0, 20, 0.1);
+  gui.add(config, 'maxForce', 0, 20, 0.1);
+  let fontController = gui.add(config, 'fontFamily', fonts);
+  let datguicontainer = document.getElementById('datgui');
+  datguicontainer.appendChild(gui.domElement);
+  fontController.onChange(function() {
+    initAndRenderText();
+  });
 
-function changeText() {
-  text.value = strs[textindex][0];
-  initAndRenderText();
-  textindex++;
-  // bgcolor = strs[textindex][1];
-}
 
-window.setInterval(function () {
-  if (textindex < strs.length) {
-    changeText();
-  }
-}, 3000)
-
-function initAndRenderText() {
-  oscandy.clear();
-  renderOnCanvas(text.value);
-  getPixelCoords();
-}
-initAndRenderText();
-text.addEventListener('keyup', function () {
-  initAndRenderText();
-});
-
-function animate() {
-  c.clear(bgcolor);
-
-  for (let i = 0; i < particles.length; i++) {
-    particles[i].update();
-    particles[i].shake();
-    particles[i].behaviour(target);
-    particles[i].render(c.ctx);
+  let target = new Vector(mouseX, mouseY);
+  for (let i = 0; i < 2000; i++) {
+    particles.push(new Point(random(CANVAS_WIDTH), random(CANVAS_HEIGHT), 'rgba(255,255,255,0.3)', false));
   }
 
-  // c.putScreenBuffer(oscandy)
-  c.loop(animate);
+
+  // Updates the particles
+  initAndRenderText();
+  function initAndRenderText() {
+    osc.clear();
+    renderOnCanvas(text.value);
+    getPixelCoords();
+  }
+  text.addEventListener('keyup', initAndRenderText);
+
+  c.noStroke();
+  function animate() {
+    c.clear(155, 155, 255);
+
+    target = new Vector(mouseX, mouseY);
+    for (let i = 0; i < particles.length; i++) {
+      particles[i].update();
+      particles[i].shake();
+      particles[i].behaviour(target);
+      particles[i].render();
+    }
+
+    // c.putScreenBuffer(osc);
+    c.loop(animate);
+  }
+  animate()
+
 }
-animate()

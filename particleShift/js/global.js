@@ -1,64 +1,51 @@
 function renderOnCanvas(text) {
-  oscandy.clear();
-  oscandy.noFill();
-  oscandy.strokeWeight(3);
-  oscandy.textAlign(CENTER);
-  oscandy.textBaseline(MIDDLE);
-  oscandy.textFont('Fugaz One');
-  oscandy.textSize(150);
-  oscandy.text(text, CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2,CANVAS_WIDTH,100);
+  osc.clear();
+  osc.noFill();
+  osc.strokeWeight(3);
+  osc.textAlign(CENTER);
+  osc.textBaseline(MIDDLE);
+  osc.textFont(config.fontFamily);
+  osc.textSize(140);
+  osc.text(text, CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2, CANVAS_WIDTH, 100);
 }
 
 function getPixelCoords() {
   let gridX = gridY = 3;
-  let width = CANVAS_WIDTH;
-  let height = CANVAS_HEIGHT;
+  let width = osc.width;
+  let height = osc.height;
 
   let newPos = [];
-  let idata = oscandy.ctx.getImageData(0, 0, width, height);
-  let buffer32 = new Int32Array(idata.data.buffer);
-  for (let y = 0; y < height; y += gridY) { //h
-    for (let x = 0; x < width; x += gridX) { //w
-      if (buffer32[(y * width + x)]) {
+
+  // get pixel coordinates
+  let imagedata = osc.ctx.getImageData(0, 0, width, height);
+  let pixels = new Int32Array(imagedata.data.buffer);
+  for (let x = 0; x < width; x += gridX) {
+    for (let y = 0; y < height; y += gridY) {
+      if (pixels[(x + y * width)]) {
         newPos.push({ x, y })
       }
     }
   }
-  idata = [];
-  buffer32 = [];
 
-  // while (newPos.length < particles.length) {
-  //   particles.splice(random(0, particles.length - 1), 1)
-  // }
+  // add new particles
   while (newPos.length > particles.length) {
-    particles.push(new Point(particles[randomInt(0,particles.length-1)].pos.x,
-                             particles[randomInt(0,particles.length-1)].pos.y, 
-                             'rgba(255,255,255,0.9)', true))
+    let newp = new Point(
+      particles[randomInt(0, particles.length - 1)].pos.x,
+      particles[randomInt(0, particles.length - 1)].pos.y,
+      'rgba(255,255,255,0.9)', true
+    )
+    particles.push(newp);
   }
   let requireLen = (particles.length - newPos.length);
 
-  // reset random
-  if (particles.length > requireLen) {
-    for (let i = 0; i < particles.length; i++) {
-      let p = particles[i];
-      if(p.active) {
-        p.target.x = random(CANVAS_WIDTH);
-        p.target.y = random(CANVAS_HEIGHT);
-        p.color = 'rgba(255,255,255,0.3)';
-        p.active = false;
-      }
-    }
-  }
-
-  // set as text
+  // Set Text Target
   for (let i = 0; i < particles.length; i++) {
+    let p = particles[i];
+    if (p.active) p.reset();
     if (i > requireLen) {
-      let p = particles[i];
       for (let j = 0; j < newPos.length; j++) {
-        p.acc.x = random(-5, 5);
-        p.acc.y = random(-5, 5);
-        p.target.x = newPos[(i + j) % newPos.length].x;
-        p.target.y = newPos[(i + j) % newPos.length].y;
+        p.blast();
+        p.setTarget(newPos[(i + j) % newPos.length].x, newPos[(i + j) % newPos.length].y)
         p.color = 'rgba(255,255,255,0.9)';
         p.active = true;
       }
