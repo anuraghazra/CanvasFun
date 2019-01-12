@@ -14,6 +14,9 @@ function Vector(x, y) {
 Vector.dist = function (v1, v2) {
   return v1.dist(v2);
 }
+Vector.distSq = function (v1, v2) {
+  return v1.distSq(v2);
+}
 Vector.sub = function (v1, v2) {
   return new Vector(v1.x - v2.x, v1.y - v2.y);
 };
@@ -71,6 +74,11 @@ Vector.prototype = {
     }
     return this;
   },
+  setAngle: function(angle) {
+		var len = this.mag();
+		this.x = Math.cos(angle) * len;
+		this.y = Math.sin(angle) * len;
+	},
   mag: function () {
     return Math.sqrt(this.x * this.x + this.y * this.y);
   },
@@ -108,6 +116,11 @@ Vector.prototype = {
     let dx = this.x - v.x;
     let dy = this.y - v.y;
     return Math.sqrt(dx * dx + dy * dy);
+  },
+  distSq: function (v) {
+    let dx = this.x - v.x;
+    let dy = this.y - v.y;
+    return (dx * dx + dy * dy);
   },
   copy: function () {
     return new Vector(this.x, this.y);

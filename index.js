@@ -89,6 +89,12 @@ let data = [
     src : 'https://github.com/anuraghazra/CanvasFun/tree/master/sevenSegmentDisplay',
     img : './thumbnails/7segment_400x400-min.png',  
   },
+  {
+    titile : 'L-SystemCreator',
+    demo : 'https://anuraghazra.github.io/CanvasFun/LSystemCreator',
+    src : 'https://github.com/anuraghazra/LSystemCreator',
+    img : './thumbnails/lsystemcreator_400x400-min.png',  
+  },
 ];
 
 let fwc_cards = document.getElementById('data-container');
