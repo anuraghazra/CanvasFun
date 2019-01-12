@@ -91,7 +91,7 @@ let data = [
   },
   {
     titile : 'L-SystemCreator',
-    demo : 'https://anuraghazra.github.io/CanvasFun/LSystemCreator',
+    demo : 'https://anuraghazra.github.io/LSystemCreator',
     src : 'https://github.com/anuraghazra/LSystemCreator',
     img : './thumbnails/lsystemcreator_400x400-min.png',  
   },
