@@ -2,18 +2,18 @@ let c = new Candy();
 c.createCanvas(WINDOW_WIDTH, WINDOW_HEIGHT);
 c.fullScreen();
 
-window.onload = function() {
-  
+window.onload = function () {
+
   c.trypreload();
   let img = c.loadImage('https://anuraghazra.github.io/CanvasFun/particleSystem/texture/emitter1.png');
   let img1 = c.loadImage('https://anuraghazra.github.io/CanvasFun/particleSystem/texture/emitter.png');
   let img2 = c.loadImage('https://anuraghazra.github.io/CanvasFun/particleSystem/texture/particle.png');
-  
-  let textures = {img, img1, img2};
-  
+
+  let textures = { img, img1, img2 };
+
   function particleController() {
     this.max_generation = 5;
-    this.rotate = true;
+    this.rotate = false;
     this.rotationRadius = 100;
     this.speed = 0.1;
     this.useFireTxture = false;
@@ -21,6 +21,9 @@ window.onload = function() {
     this.useGreenEmitter = true;
     this.radius = 32;
     this.randomRadius = false;
+    this.useContrastBlending = false;
+    this.renderBlur = 2;
+    this.renderContrast = 5;
   }
   let config = new particleController();
 
@@ -31,7 +34,7 @@ window.onload = function() {
       "Default": {
         "0": {
           "max_generation": 3,
-          "rotate": true,
+          "rotate": false,
           "useFireTxture": false,
           "useRedEmitter": true,
           "useGreenEmitter": true
@@ -49,7 +52,7 @@ window.onload = function() {
     },
     "folders": {}
   }
-  let gui = new dat.GUI({ load: json});
+  let gui = new dat.GUI({ load: json });
   gui.remember(config);
 
   gui.add(config, 'max_generation', 1, 20, 1);
@@ -57,6 +60,9 @@ window.onload = function() {
   gui.add(config, 'radius', 1, 64).listen();
   gui.add(config, 'rotationRadius', 10, 500);
   gui.add(config, 'randomRadius');
+  let ContrastController = gui.add(config, 'useContrastBlending').name('Contrast Blending');
+  let R_blur = gui.add(config, 'renderBlur', 0, 50);
+  let R_contrast = gui.add(config, 'renderContrast', 0, 50);
 
   gui.add(config, 'rotate');
   let Tcontroller1 = gui.add(config, 'useFireTxture');
@@ -65,7 +71,23 @@ window.onload = function() {
 
   let ps;
 
-  c.preload = function() {
+  ContrastController.onChange(function (value) {
+    if (value === true) {
+      c.canvas.style.filter = `blur(${config.renderBlur}px) contrast(${config.renderContrast})`;
+    } else {
+      c.canvas.style.filter = '';
+    }
+  });
+  R_blur.onChange(function (value) {
+    if (!config.useContrastBlending) return;
+    c.canvas.style.filter = `blur(${config.renderBlur}px) contrast(${config.renderContrast})`;
+  });
+  R_contrast.onChange(function (value) {
+    if (!config.useContrastBlending) return;
+    c.canvas.style.filter = `blur(${config.renderBlur}px) contrast(${config.renderContrast})`;
+  });
+
+  c.preload = function () {
     ps = newParticleSystem();
     animate();
   }
@@ -82,7 +104,7 @@ window.onload = function() {
       arr.push(textures['img2']);
     }
     if (arr.length < 1) return;
-    ps = new ParticleSystem(CANVAS_WIDTH/2, 400, arr);
+    ps = new ParticleSystem(CANVAS_WIDTH / 2, 400, arr);
     return ps;
   }
 
@@ -105,14 +127,14 @@ window.onload = function() {
     angle += config.speed;
     ps.setRadius(config.radius)
 
-    if(config.rotate) {
-      ps.origin.x = mouseX+Math.cos(angle)*config.rotationRadius;
-      ps.origin.y = mouseY+Math.sin(angle)*config.rotationRadius;
+    if (config.rotate) {
+      ps.origin.x = mouseX + Math.cos(angle) * config.rotationRadius;
+      ps.origin.y = mouseY + Math.sin(angle) * config.rotationRadius;
     } else {
       ps.origin.x = mouseX;
       ps.origin.y = mouseY;
     }
-    
+
     for (let i = 0; i < config.max_generation; i++) {
       ps.addParticle();
     }
