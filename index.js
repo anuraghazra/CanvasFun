@@ -7,7 +7,8 @@ fetch('./data.json')
     loadCards();
   })
 
-
+// NOTE
+// i'm gonna parse the url so my websites json data is not effected;
 function loadCards() {
   let fwc_cards = document.getElementById('data-container');
   let temp = data.map((i) => {
@@ -15,7 +16,7 @@ function loadCards() {
     <li class="cards__item">
     <div class="card__body">
       <div class="card__image">
-        <img src="${i.img}" alt="">
+        <img src="${i.img.replace('https:/anuraghazra.github.io/CanvasFun', '')}" alt="">
       </div>
       <div class="card__content">
         <div class="card__title">${i.title}</div>
