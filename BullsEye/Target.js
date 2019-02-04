@@ -8,7 +8,7 @@ class Target {
 
   update() {
     this.time += 0.1;
-    this.pos.y += 20 * Math.cos(this.time * 0.5) * 0.5;
+    this.pos.y += 20 * Math.cos(this.time * 0.5) * 0.1;
   }
   render() {
     c.fill(255);

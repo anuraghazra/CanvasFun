@@ -15,7 +15,6 @@ class Arrow {
         this.pos.y < other.pos.y + other.height)
     ) {
       this.isCollided = true;
-
     }
   }
 
@@ -29,15 +28,18 @@ class Arrow {
   }
 
   update() {
+    let py = 0;
     if (this.isCollided) {
       this.pos.x = target.pos.x;
-      this.pos.y = target.pos.y;
+      this.pos.y = target.pos.y - (py);
     } else {
       this.pos.add(this.vel);
       this.vel.add(this.acc);
       this.vel.add(this.gravity);
     };
     this.acc.mult(0);
+    py = this.pos.y - target.height;
+
   }
 
   render() {
