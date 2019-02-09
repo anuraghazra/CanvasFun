@@ -12,7 +12,7 @@ window.onload = function () {
   let textures = { img, img1, img2 };
 
   function particleController() {
-    this.max_generation = 5;
+    this.max_generation = 6;
     this.rotate = false;
     this.rotationRadius = 100;
     this.speed = 0.1;
@@ -21,9 +21,9 @@ window.onload = function () {
     this.useGreenEmitter = true;
     this.radius = 32;
     this.randomRadius = false;
-    this.useContrastBlending = false;
-    this.renderBlur = 2;
-    this.renderContrast = 5;
+    this.useContrastBlending = true;
+    this.renderBlur = 3;
+    this.renderContrast = 11;
   }
   let config = new particleController();
 
@@ -33,7 +33,7 @@ window.onload = function () {
     "remembered": {
       "Default": {
         "0": {
-          "max_generation": 3,
+          "max_generation": 6,
           "rotate": false,
           "useFireTxture": false,
           "useRedEmitter": true,
@@ -43,7 +43,7 @@ window.onload = function () {
       "Fire": {
         "0": {
           "max_generation": 5,
-          "rotate": true,
+          "rotate": false,
           "useFireTxture": true,
           "useRedEmitter": false,
           "useGreenEmitter": false
@@ -71,20 +71,24 @@ window.onload = function () {
 
   let ps;
 
+  setContrastBlending();
+  function setContrastBlending() {
+    c.canvas.style.filter = `blur(${config.renderBlur}px) contrast(${config.renderContrast})`;
+  }
   ContrastController.onChange(function (value) {
     if (value === true) {
-      c.canvas.style.filter = `blur(${config.renderBlur}px) contrast(${config.renderContrast})`;
+      setContrastBlending();
     } else {
       c.canvas.style.filter = '';
     }
   });
   R_blur.onChange(function (value) {
     if (!config.useContrastBlending) return;
-    c.canvas.style.filter = `blur(${config.renderBlur}px) contrast(${config.renderContrast})`;
+    setContrastBlending();
   });
   R_contrast.onChange(function (value) {
     if (!config.useContrastBlending) return;
-    c.canvas.style.filter = `blur(${config.renderBlur}px) contrast(${config.renderContrast})`;
+    setContrastBlending();
   });
 
   c.preload = function () {
