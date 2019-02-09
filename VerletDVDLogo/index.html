@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>VerletDVDLogo | Anurag Hazra</title>
+  <script src="https://anuraghazra.github.io/verlet.js/src/verlet.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 14px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .git {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 5px;
+      text-align: center;
+      background-color: white;
+      color: black;
+      font-size: 14px;
+      text-decoration: none;
+      border-radius: 0px 10px 10px 0;
+    }
+
+    .src {
+      top: 30px;
+    }
+
+    .right {
+      right: 0;
+      left: auto;
+      border-radius: 10px 0px 0px 0px;
+    }
+
+    .down {
+      bottom: 0;
+      top: auto;
+      font-size: 12px;
+      /* opacity: 0.5; */
+    }
+
+    .ui {
+      right: 0;
+      position: absolute;
+      padding: 5px 10px;
+      background-color: white;
+      border-radius: 0px 0px 10px 10px;
+    }
+    label {
+      padding: 5px 10px;
+      color: black;
+      background-color: white;
+      border-radius: 0px 0px 10px 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="ui">
+    <label>
+      <input type="checkbox" id="addrope">
+      Add rope
+    </label>
+  </div>
+  <canvas id="c"></canvas>
+
+  <a href="https://github.com/anuraghazra/verlet.js" class="git">Try out my verlet.js lib</a>
+  <a href="https://github.com/anuraghazra/CanvasFun/bouncingDVDLogo" class="git src">source code</a>
+  <p class="git down">NOTE: all the physics stuff is
+    handled by <a href="https://github.com/anuraghazra/verlet.js">verlet.js</a> which is written by me (i'm not using any third party physics engine)</p>
+
+  <p class="git right down">`SPACE` to pin points, `alt` to release pinned points</p>
+
+  <div id="ui"></div>
+  <script src="./index.js"></script>
+</body>
+
+</html>
