@@ -94,5 +94,11 @@
     "demo" : "https://anuraghazra.github.io/LSystemCreator",
     "src" : "https://github.com/anuraghazra/LSystemCreator",
     "img" : "https:/anuraghazra.github.io/CanvasFun/thumbnails/lsystemcreator_400x400-min.png"
+  },
+  {
+    "title" : "Love Hearts",
+    "demo" : "https://anuraghazra.github.io/CanvasFun/LoveHearts/",
+    "src" : "https://github.com/anuraghazra/CanvasFun/tree/master/LoveHearts",
+    "img" : "https:/anuraghazra.github.io/CanvasFun/thumbnails/loveHearts_400x400-min.png"
   }
 ]

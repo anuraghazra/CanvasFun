@@ -73,6 +73,13 @@
       flex-direction: column;
       overflow: hidden;
       border: 1px solid rgba(0, 0, 0, 0.1);
+      transition: 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+      transform: scale(1);
+    }
+
+    .card__body:hover {
+      transform: scale(1.03);
+      box-shadow: 0 20px 60px -14px rgba(0, 0, 0, 0.3);
     }
 
     .card__content {
@@ -86,17 +93,9 @@
     .card__image {
       border-top-left-radius: 0.25rem;
       border-top-right-radius: 0.25rem;
-      -webkit-filter: contrast(70%);
-      filter: contrast(70%);
       overflow: hidden;
       position: relative;
       height: 300px;
-      transition: -webkit-filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
-    }
-
-    .card__image:hover {
-      -webkit-filter: contrast(100%);
-      filter: contrast(100%);
     }
 
     .card__image::before {

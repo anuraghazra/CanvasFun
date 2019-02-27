@@ -12,6 +12,10 @@ let drawing = [];
 let state = -1;
 let font;
 
+getdraw.onmouseover = function (e) {
+  e.preventDefault()
+  console.log(JSON.stringify(drawing));
+};
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   font = loadFont('./American_Captain.otf');
@@ -26,7 +30,6 @@ function calculateFourier() {
   }
   fourierX = dft(x);
   fourierX.sort((a, b) => b.amp - a.amp);
-
 }
 
 function mousePressed() {
@@ -72,15 +75,15 @@ function draw() {
   if (state == USER) {
     textFont(font);
     textSize(150);
-    text('Anurag Hazra', 100, 200);
-    let points = font.textToPoints('Anurag Hazra', 100, 200);
+    text('Draw', width/2 - 150, height/2);
+    let points = font.textToPoints('Draw', width/2 - 150, height/2);
     num += 0.5
     console.log(points)
     if (num > points.length) {
       num = 0;
     };
     // for (let i = 0; i < points; i++) {
-    let point = createVector(points[floor(num % points.length)].x - width / 2, points[floor(num % points.length)].y - height / 2);
+    let point = {x : (points[floor(num % points.length)].x - width / 2), y: points[floor(num % points.length)].y - height / 2};
     drawing.push(point);
     // }
     stroke(255);
