@@ -16,7 +16,7 @@ function loadCards() {
     <li class="cards__item">
     <div class="card__body">
       <div class="card__image">
-        <img src="${i.img.replace('https:/anuraghazra.github.io/CanvasFun', '.')}" alt="">
+        <img src="${i.img.replace('https://anuraghazra.github.io/CanvasFun', '.')}" alt="">
       </div>
       <div class="card__content">
         <div class="card__title">${i.title}</div>
