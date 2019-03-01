@@ -14,6 +14,11 @@ let mouseY;
 canvas.addEventListener('mousemove', function (e) {
   mouseX = e.offsetX;
   mouseY = e.offsetY;
+});
+
+canvas.addEventListener('touchmove', function (e) {
+  mouseX = e.touches[0].clientY;
+  mouseY = e.touches[0].clientX;
 })
 // let map = [
 //   [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0],
