@@ -25,12 +25,27 @@ class Player {
       verlet.clamp(newj, this.tailDots, this.tailCons)
     }, 1000);
 
-    window.addEventListener('deviceorientation', (e) => {
-      let tiltLR = e.gamma;
-      let tiltFB = e.beta;
-      let gyro = createVector(tiltLR, tiltFB);
-      this.applyForce(gyro);
-    });
+    this.initLR = 0;
+    this.initFB = 0;
+    this.tiltLR = 0;
+    this.tiltFB = 0;
+    window.setTimeout(() => {
+      const getInitialOri = (e) => {
+        console.log(this)
+        this.initLR = e.gamma;
+        this.initFB = e.beta;
+
+        window.removeEventListener('deviceorientation', getInitialOri);
+      }
+      window.addEventListener('deviceorientation', getInitialOri);
+      window.addEventListener('deviceorientation', (e) => {
+        this.tiltLR = e.gamma;
+        this.tiltFB = e.beta;
+        let gyro = createVector(this.initLR - this.tiltLR, this.initFB - this.tiltFB);
+        this.applyForce(gyro);
+      });
+    }, 200)
+
   }
   applyForce(f) { this.acc.add(f) }
 
@@ -72,8 +87,13 @@ class Player {
     this.tailDots[0].x = this.pos.x;
     this.tailDots[0].y = this.pos.y;
     verlet.superUpdate(this.tailDots, this.tailCons, 50);
+    text(this.initLR, 220, 100)
+    text(this.initFB, 220, 120)
+    text(this.tiltLR, 100, 100)
+    text(this.tiltFB, 100, 120)
 
     push();
+
     verlet.superRender(this.tailDots, this.tailCons, {
       renderDots: false,
       lineColor: 'white',

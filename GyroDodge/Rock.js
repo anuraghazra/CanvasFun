@@ -1,8 +1,8 @@
 class Rock {
-  constructor() {
-    this.pos = createVector(random(width), random(height));
+  constructor(x, y, radius) {
+    this.pos = createVector(x || random(width), y || random(height));
     this.vel = p5.Vector.random2D();
-    this.radius = random(10, 30);
+    this.radius = radius || random(10, 30);
     this.vertices = [];
     this.offsets = [];
     this.total = random(5, 15);
@@ -17,6 +17,13 @@ class Rock {
       let y = r * sin(angle);
       this.vertices.push({ x, y });
     }
+  }
+
+  breakup() {
+    var newA = [];
+    newA[0] = new Rock(this.pos.x, this.pos.y, this.radius * 0.8);
+    newA[1] = new Rock(this.pos.x, this.pos.y, this.radius * 0.8);
+    return newA;
   }
 
   update() {

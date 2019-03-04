@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <title>Gyro Dodge</title>
 
   <style>
@@ -11,15 +14,86 @@
       margin: 0;
       padding: 0;
     }
+
+    html,
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+
+    .overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      text-align: center;
+      display: flex;
+      background-color: rgba(35, 35, 35, 0.9);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.8s ease;
+    }
+
+    .info {
+      margin: auto;
+      padding-bottom: 100px;
+    }
+
+    button {
+      padding: 10px;
+      border-radius: 5px;
+      outline: none;
+      border: 1px solid white;
+      background-color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      border: 1px solid white;
+      background-color: #353535;
+      color: white;
+    }
+
+    #score {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      color: white;
+      font-size: 15px;
+      transition: 0.8s ease;
+    }
+
+    #game-start {
+      display: flex;
+      opacity: 1;
+    }
   </style>
   <script src="../src/lib/p5.min.js"></script>
   <script src="https://anuraghazra.github.io/verlet.js/src/verlet.js"></script>
 </head>
-<body>
-  
 
+<body>
+
+  <div class="overlay show" id="game-start">
+    <div class="info">
+      <h2>Destroy All The Astroids</h2>
+      <h2 id="game-start-timer"></h2>
+    </div>
+  </div>
+  <div class="overlay" id="game-over">
+    <div class="info">
+      <h2>Game Over</h2>
+      <br>
+      <button id="game-restart">Restart</button>
+    </div>
+  </div>
+  <h3 id="score">Score: </h3>
+
+  <script src="./Bullet.js"></script>
   <script src="./Rock.js"></script>
   <script src="./Player.js"></script>
   <script src="./index.js"></script>
 </body>
+
 </html>
