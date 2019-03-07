@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Ask Buddie Logo dissolve | Anurag Hazra</title>
+  <style>
+    * {
+      font-family: 'Century Gothic';
+      user-select: none;
+    }
+
+    body {
+      margin: auto;
+      background-color: white;
+    }
+
+    .wrapper {
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    canvas {
+      margin: auto;
+    }
+
+    .info {
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin: 5px;
+      font-size: 0.8rem;
+    }
+
+    .bottom {
+      top: initial;
+      bottom: 0;
+    }
+
+    .right {
+      right: 0;
+      left: initial;
+    }
+  </style>
+</head>
+
+<body>
+
+  <p class="info">Click And Drag</p>
+  <p class="info bottom">Created By <a target="_blank" href="https://anuraghazra.github.io">Anurag Hazra</a></p>
+  <p class="info bottom right"><a target="_blank"
+      href="https://github.com/anuraghazra/CanvasFun/tree/master/askbuddie">Source-code</a></p>
+  <div class="wrapper">
+    <canvas id="c"></canvas>
+  </div>
+
+  <script src="https://anuraghazra.github.io/Candy.js/dist/Candy.build.js"></script>
+  <script src="../src/lib/Vector.js"></script>
+  <script src="./src/js/globals.js"></script>
+  <script src="./src/js/point.js"></script>
+  <script src="./src/js/index.js"></script>
+</body>
+
+</html>
