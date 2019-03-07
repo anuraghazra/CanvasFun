@@ -21,9 +21,10 @@ window.addEventListener('mousemove', (e) => {
   mousePos.y = e.offsetY;
 })
 window.addEventListener('touchmove', (e) => {
+  e.preventDefault();
   console.log(e.touches)
-  mousePos.x = e.touches[0].screenX;
-  mousePos.y = e.touches[0].screenY;
+  mousePos.x = e.touches[0].pageX;
+  mousePos.y = e.touches[0].pageY;
 })
 
 c.createScreenBuffer('osc');
