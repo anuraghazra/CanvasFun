@@ -11,8 +11,20 @@ let points = [];
 let pointSize = 4;
 let mouseDown = false;
 
+let mousePos = {
+  x: 0, y: 0
+}
 window.addEventListener('mousedown', () => mouseDown = true);
 window.addEventListener('mouseup', () => mouseDown = false);
+window.addEventListener('mousemove', (e) => {
+  mousePos.x = e.offsetX;
+  mousePos.y = e.offsetY;
+})
+window.addEventListener('touchmove', (e) => {
+  console.log(e.touches)
+  mousePos.x = e.touches[0].screenX;
+  mousePos.y = e.touches[0].screenY;
+})
 
 c.createScreenBuffer('osc');
 let osc = c.screenBuffers.osc;
@@ -34,7 +46,7 @@ window.onload = function () {
   function animate() {
     c.clear('white');
 
-    mouse.setXY(mouseX, mouseY);
+    mouse.setXY(mousePos.x, mousePos.y);
     osc.image(img, 100, 100, width - 200, height - 150);
 
     if (count > 0) getPixelCoords();
