@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../src/lib/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
+
+  <title>Pi Day Collisions</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 1px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    canvas {
+      margin: 0;
+      outline: 1px solid black;
+    }
+
+    #count {
+      position: absolute;
+      left: 20px;
+      color: white;
+      font-size: 14px;
+    }
+
+    .ui {
+      position: absolute;
+      top: 40px;
+      lefT: 10px;
+      opacity: 0.8;
+      padding: 5px;
+    }
+
+    input {
+      width: 100px;
+      padding: 5px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: white;
+      cursor: pointer;
+    }
+
+    a {
+      position: absolute;
+      top: -30px;
+      right: -300px;
+      color: white;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <p id="count">0</p>
+
+  <div class="ui">
+    <input id="powof" value="4" />
+    <input id="timestep" value="10000" />
+    <button id="run">run</button>
+
+    <a href="https://github.com/anuraghazra/CanvasFun/tree/master/PiDayCollisions">Source-code</a>
+  </div>
+
+  <script src=" ./Block.js"> </script>
+  <script src=" ./index.js"> </script>
+</body>
+
+</html>
