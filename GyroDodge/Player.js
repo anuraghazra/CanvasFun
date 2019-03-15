@@ -6,45 +6,15 @@ class Player {
     this.radius = 10;
     this.tailDots = [];
     this.tailCons = [];
-    this.tail = verlet.Poly.rope({
-      x: this.pos.x,
-      y: this.pos.y,
-      segs: 5,
-      gap: 10,
-      pinned: true
-    }, this.tailDots, this.tailCons);
 
-    window.setTimeout(() => {
-      let last = this.tailDots[this.tailDots.length - 1];
-      this.tailDots.push({ x: last.x + 10, y: last.y + 10, oldx: last.oldx, oldy: last.oldy });
-      let newj = []
-      for (const n of this.tailCons) {
-        newj.push(n.id);
-      }
-      newj.push([this.tailDots.length - 2, this.tailDots.length - 1]);
-      verlet.clamp(newj, this.tailDots, this.tailCons)
-    }, 1000);
-
-    this.initLR = 0;
-    this.initFB = 0;
     this.tiltLR = 0;
     this.tiltFB = 0;
-    window.setTimeout(() => {
-      const getInitialOri = (e) => {
-        console.log(this)
-        this.initLR = e.gamma;
-        this.initFB = e.beta;
-
-        window.removeEventListener('deviceorientation', getInitialOri);
-      }
-      window.addEventListener('deviceorientation', getInitialOri);
-      window.addEventListener('deviceorientation', (e) => {
-        this.tiltLR = e.gamma;
-        this.tiltFB = e.beta;
-        let gyro = createVector(this.initLR - this.tiltLR, this.initFB - this.tiltFB);
-        this.applyForce(gyro);
-      });
-    }, 200)
+    window.addEventListener('deviceorientation', (e) => {
+      this.tiltLR = e.gamma;
+      this.tiltFB = e.beta;
+      let gyro = createVector(this.tiltLR, this.tiltFB);
+      this.applyForce(gyro);
+    });
 
   }
   applyForce(f) { this.acc.add(f) }
@@ -84,21 +54,8 @@ class Player {
   }
 
   render() {
-    this.tailDots[0].x = this.pos.x;
-    this.tailDots[0].y = this.pos.y;
-    verlet.superUpdate(this.tailDots, this.tailCons, 50);
-    text(this.initLR, 220, 100)
-    text(this.initFB, 220, 120)
-    text(this.tiltLR, 100, 100)
-    text(this.tiltFB, 100, 120)
 
     push();
-
-    verlet.superRender(this.tailDots, this.tailCons, {
-      renderDots: false,
-      lineColor: 'white',
-      debug: false
-    });
     translate(this.pos.x, this.pos.y);
     // text(this.tailDots.length, 100, 100)
     fill(255);

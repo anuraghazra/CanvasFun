@@ -49,6 +49,7 @@
       background-color: white;
       cursor: pointer;
     }
+
     button:hover {
       border: 1px solid white;
       background-color: #353535;
@@ -61,12 +62,32 @@
       top: 20px;
       color: white;
       font-size: 15px;
+      transform: translateX(0);
       transition: 0.8s ease;
     }
 
     #game-start {
       display: flex;
       opacity: 1;
+    }
+
+    .animate {
+      transform: translateX(-50%) !important;
+      left: 50% !important;
+      top: 55% !important;
+      font-size: 24px !important;
+    }
+
+    .hide {
+      opacity: 0 !important;
+      pointer-events: none !important;
+      transition: 0.2s;
+    }
+
+    .show {
+      opacity: 1 !important;
+      pointer-events: all !important;
+      transition: 0.2s;
     }
   </style>
   <script src="../src/lib/p5.min.js"></script>
@@ -93,6 +114,7 @@
   <script src="./Bullet.js"></script>
   <script src="./Rock.js"></script>
   <script src="./Player.js"></script>
+  <script src="./Game.js"></script>
   <script src="./index.js"></script>
 </body>
 
