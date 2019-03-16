@@ -56,14 +56,21 @@
       color: white;
     }
 
-    #score {
+    .ui-text {
       position: absolute;
-      left: 20px;
-      top: 20px;
       color: white;
       font-size: 15px;
       transform: translateX(0);
       transition: 0.8s ease;
+    }
+
+    #score {
+      left: 20px;
+      top: 20px;
+    }
+    #level {
+      right: 20px;
+      top: 20px;
     }
 
     #game-start {
@@ -90,8 +97,9 @@
       transition: 0.2s;
     }
   </style>
-  <script src="../src/lib/p5.min.js"></script>
-  <script src="https://anuraghazra.github.io/verlet.js/src/verlet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
+
 </head>
 
 <body>
@@ -109,8 +117,17 @@
       <button id="game-restart">Restart</button>
     </div>
   </div>
-  <h3 id="score">Score: </h3>
+  <div class="overlay" id="game-win">
+    <div class="info">
+      <h2 id="game-win-level">You Win!</h2>
+      <br>
+      <button id="next-level">Next Level</button>
+    </div>
+  </div>
+  <h3 class="ui-text" id="level">Level: </h3>
+  <h3 class="ui-text" id="score">Score: </h3>
 
+  <script src="./AssetMan.js"></script>
   <script src="./Bullet.js"></script>
   <script src="./Rock.js"></script>
   <script src="./Player.js"></script>

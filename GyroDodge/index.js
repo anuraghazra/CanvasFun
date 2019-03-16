@@ -1,16 +1,27 @@
-// GAME STATE
+/**
+ * @game GyroDodge
+ * @author <hazru.anurag@gmail.com>
+ * @github
+ * https://anuraghazra.github.io/GyroDodge 
+ */
+
 let game;
 let ww = window.innerWidth;
 let wh = window.innerHeight;
+let assets = new AssetMan();
+
+function preload() {
+  assets.preload();
+}
 
 function setup() {
-  game = new Game();
   createCanvas(ww, wh);
+  game = new Game(assets);
   game.init();
 }
 
 function mouseReleased() {
-  game.bullets.push(new Bullet(game.ship.pos, game.ship.vel.heading()));
+  game.ship.shoot();
 }
 
 function draw() {
@@ -18,10 +29,14 @@ function draw() {
 
   // pause the game until the timer runs out
   if (game.countDown >= 0) return;
+  if (game.rocks.length < 1) {
+    game.win();
+    noLoop();
+  }
   // pause the game on gameover
   if (game.gameover) {
     game.over();
-    noLoop()
+    noLoop();
   }
   game.showScore();
 
@@ -45,7 +60,7 @@ function draw() {
       for (let j = game.rocks.length - 1; j >= 0; j--) {
         if (game.bullets[i].hits(game.rocks[j])) {
           // if rock is bigger the break it up
-          if (game.rocks[j].radius > 15) {
+          if (game.rocks[j].radius >= game.rockBreakRadius) {
             let newRocks = game.rocks[j].breakup();
             game.rocks = game.rocks.concat(newRocks);
           }
