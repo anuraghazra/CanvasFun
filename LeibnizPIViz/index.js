@@ -77,8 +77,6 @@ function draw() {
   waveViz3(400);
   waveViz4(600);
 
-  console.log(history.length)
+  console.log(pi)
   iteration++;
-
-
 }
