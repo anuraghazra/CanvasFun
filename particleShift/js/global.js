@@ -1,27 +1,27 @@
 function renderOnCanvas(text) {
-  osc.clear();
+  // osc.clear();
   osc.noFill();
   osc.strokeWeight(3);
   osc.textAlign(CENTER);
   osc.textBaseline(MIDDLE);
   osc.textFont(config.fontFamily);
-  osc.textSize(140);
-  osc.text(text, CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2, CANVAS_WIDTH, 100);
+  osc.textSize((windowWidth / windowHeight) * FONT_SIZE);
+  osc.text(text, windowWidth / 2, windowHeight / 2, windowWidth, 100);
 }
 
 function getPixelCoords() {
   let gridX = gridY = 3;
-  let width = osc.width;
-  let height = osc.height;
+  let w = windowWidth;
+  let h = windowHeight;
 
   let newPos = [];
 
   // get pixel coordinates
-  let imagedata = osc.ctx.getImageData(0, 0, width, height);
+  let imagedata = osc.ctx.getImageData(0, 0, w, h);
   let pixels = new Int32Array(imagedata.data.buffer);
-  for (let x = 0; x < width; x += gridX) {
-    for (let y = 0; y < height; y += gridY) {
-      if (pixels[(x + y * width)]) {
+  for (let x = 0; x < w; x += gridX) {
+    for (let y = 0; y < h; y += gridY) {
+      if (pixels[(x + y * w)]) {
         newPos.push({ x, y })
       }
     }
