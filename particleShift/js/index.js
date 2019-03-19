@@ -8,7 +8,7 @@ const c = new Candy(canvas, canvas.width, canvas.height);
 let osc = c.createScreenBuffer('osc');
 let particles = [];
 let INITIAL_PARTICLES_COUNT = 2500;
-const FONT_SIZE = 80; 
+const FONT_SIZE = 100; 
 
 // FONTS AND GUI CONFIGS
 let fonts = {
