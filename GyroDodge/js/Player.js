@@ -7,50 +7,39 @@ class Player {
     this.acc = createVector(0, 0);
     this.vel = createVector(0, 0);
     this.radius = 8;
-    this.tailDots = [];
-    this.tailCons = [];
 
     this.tiltLR = 0;
     this.tiltFB = 0;
 
     this.isUsingKeyboard = false;
 
-    this.rightPressed = false;
-    this.leftPressed = false;
-    this.downPressed = false;
-    this.upPressed = false;
+    if (!window.DeviceOrientationEvent) {
+      alert("Sorry, your browser doesn't support Device Orientation")
+    }
 
-    if (!(window.DeviceOrientationEvent && 'ontouchstart' in window)) {
-      // alert("Sorry, your browser doesn't support Device Orientation")
+    if (!('ontouchstart' in window)) {
       this.isUsingKeyboard = true;
-      window.addEventListener('keydown', (e) => {
-        if (event.keyCode == 39) {
-          this.rightPressed = true;
-        }
-        else if (event.keyCode == 37) {
-          this.leftPressed = true;
-        }
-        if (event.keyCode == 40) {
-          this.downPressed = true;
-        }
-        else if (event.keyCode == 38) {
-          this.upPressed = true;
-        }
-      });
-      window.addEventListener('keyup', (e) => {
-        if (event.keyCode == 39) {
-          this.rightPressed = false;
-        }
-        if (event.keyCode == 37) {
-          this.leftPressed = false;
-        }
-        if (event.keyCode == 40) {
-          this.downPressed = false;
-        }
-        if (event.keyCode == 38) {
-          this.upPressed = false;
-        }
-      });
+      this.keys = {};
+      // window.addEventListener("keydown", (e) => {
+      //   this.keys[e.keyCode] = true;
+      // });
+      // window.addEventListener("keyup", (e) => {
+      //   delete this.keys[e.keyCode];
+      // });
+      // window.addEventListener('keydown', () => {
+      //   if (65 in this.keys)
+      //     this.acc.x -= 1;
+      //   if (68 in this.keys)
+      //     this.acc.x += 1;
+      //   if (87 in this.keys)
+      //     this.acc.y -= 1;
+      //   if (83 in this.keys)
+      //     this.acc.y += 1;
+      // });
+      window.addEventListener('mousemove', (e) => {
+        let pos = p5.Vector.sub(this.pos, createVector(e.offsetX, e.offsetY))
+        this.applyForce(pos)
+      })
     } else {
       window.addEventListener('deviceorientation', (e) => {
         this.tiltLR = e.gamma;
@@ -61,22 +50,15 @@ class Player {
     }
   }
 
-  useKeyboard() {
-    if (this.rightPressed) {
-      this.tiltLR = +20;
-    }
-    else if (this.leftPressed) {
-      this.tiltLR = -20;
-    }
-    if (this.downPressed) {
-      this.tiltFB = +20;
-    }
-    else if (this.upPressed) {
-      this.tiltFB = -20;
-    }
-    let gyro = createVector(this.tiltLR, this.tiltFB);
-    this.applyForce(gyro);
+
+  reset() {
+    this.pos = createVector(width / 2, height / 2);
+    this.acc = createVector(0, 0);
+    this.vel = createVector(0, 0);
+    this.tiltLR = 0;
+    this.tiltFB = 0;
   }
+
 
   applyForce(f) { this.acc.add(f) }
 
@@ -85,10 +67,6 @@ class Player {
     this.vel.limit(5);
     this.pos.add(this.vel);
     this.acc.mult(0);
-
-    if (this.isUsingKeyboard) {
-      this.useKeyboard()
-    }
   }
 
   shoot() {
@@ -125,8 +103,14 @@ class Player {
     return this.collidePointPoly(this.pos.x, this.pos.y, target, target.vertices);
   }
 
-  render() {
+  hitWall() {
+    if (this.pos.x > width || this.pos.x < 0 || this.pos.y > height || this.pos.y < 0) {
+      return true;
+    }
+    return false;
+  }
 
+  render() {
     push();
     translate(this.pos.x, this.pos.y);
     // text(this.tailDots.length, 100, 100)

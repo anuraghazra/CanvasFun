@@ -3,6 +3,8 @@
  * @author <hazru.anurag@gmail.com>
  * @github
  * https://anuraghazra.github.io/GyroDodge 
+ * 
+ * NOTE: All the sound effects are taken from <https://freesound.org>
  */
 
 let game;
@@ -17,15 +19,16 @@ function preload() {
 function setup() {
   createCanvas(ww, wh);
   game = new Game(assets);
+  game.restart();
   game.init();
 }
 
 function mouseReleased() {
-  game.ship.shoot();
+  game && game.ship.shoot();
 }
 
 function draw() {
-  background(35, 105);
+  background(game.bgColor);
 
   // pause the game until the timer runs out
   if (game.countDown >= 0) return;
@@ -33,6 +36,7 @@ function draw() {
     game.win();
     noLoop();
   }
+
   // pause the game on gameover
   if (game.gameover) {
     game.over();
@@ -43,6 +47,10 @@ function draw() {
   // all the updates and logics
   game.ship.update();
   game.ship.render();
+
+  if (game.ship.hitWall()) {
+    game.gameover = true;
+  }
   for (const rock of game.rocks) {
     if (game.ship.hit(rock)) {
       game.gameover = true;
@@ -65,6 +73,10 @@ function draw() {
             game.rocks = game.rocks.concat(newRocks);
           }
           // delete the rock and bullet
+          for (let k = 0; k < 10; k++) {
+            game.particles.push(new Particle(game.bullets[i].pos));
+            game.sounds.blast.play()
+          }
           game.rocks.splice(j, 1);
           game.bullets.splice(i, 1);
           game.score += 100;
@@ -72,5 +84,15 @@ function draw() {
         }
       }
     }
-  } // - for
+  }
+
+  for (let i = 0; i < game.particles.length; i++) {
+    game.particles[i].update();
+    game.particles[i].render();
+    game.particles[i].die();
+    if (game.particles[i].life < 0) {
+      game.particles.splice(i, 1)
+    }
+  }
+
 }

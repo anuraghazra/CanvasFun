@@ -2,7 +2,7 @@ class Rock {
   constructor(x, y, radius) {
     this.pos = createVector(x || random(width), y || random(height));
     this.vel = p5.Vector.random2D();
-    this.radius = radius || random(10, 30);
+    this.radius = radius || random(15, 30);
     this.vertices = [];
     this.offsets = [];
     this.total = random(5, 15);

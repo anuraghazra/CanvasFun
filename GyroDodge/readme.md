@@ -10,6 +10,6 @@ Can you beat the game?
 
 ### Author
 - hazru.anurag@gmail.com
-- anuraghazra.github.io
+- https://anuraghazra.github.io
 
 made with :heart: and Javascript
