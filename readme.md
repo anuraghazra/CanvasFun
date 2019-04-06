@@ -34,6 +34,7 @@ Most of the projects i made in my fun times.
 19. [VerletDVDLogo](https://anuraghazra.github.io/CanvasFun/VerletDVDLogo) 
 20. [fourierDrawing](https://anuraghazra.github.io/CanvasFun/fourierDrawing) 
 21. [PiDayCollisions](https://anuraghazra.github.io/CanvasFun/PiDayCollisions)
+22. [PiDayCollisions](https://anuraghazra.github.io/CanvasFun/infiniteTriangles)
 
 
 ### libs
