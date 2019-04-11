@@ -100,5 +100,11 @@
     "demo" : "https://anuraghazra.github.io/CanvasFun/LoveHearts/",
     "src" : "https://github.com/anuraghazra/CanvasFun/tree/master/LoveHearts",
     "img" : "https://anuraghazra.github.io/CanvasFun/thumbnails/loveHearts_400x400-min.png"
+  },
+  {
+    "title" : "InfiniteTriangles",
+    "demo" : "https://anuraghazra.github.io/CanvasFun/infiniteTriangles",
+    "src" : "https://github.com/anuraghazra/CanvasFun/tree/master/infiniteTriangles",
+    "img" : "https://anuraghazra.github.io/CanvasFun/thumbnails/infinitetrig_400x400-min.png"
   }
 ]
