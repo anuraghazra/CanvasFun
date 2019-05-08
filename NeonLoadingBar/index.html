@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Particle Loading Bar By Anurag Hazra">
+  <meta name="keywords" content="Particle,boid,javascript,canvas,boid">
+  <meta name="author" content="Anurag Hazra">
+  <title>Neon Loading bar | Anurag Hazra</title>
+  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow: hidden;
+    }
+
+    canvas {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .loading {
+      color: white;
+      font-family: 'Anton', sans-serif;
+      letter-spacing: 5px;
+      font-size: 24px;
+      position: absolute;
+      left: 50%;
+      top: 30%;
+
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    .info {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      font-size: 14px;
+      z-index: 2;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .info a {
+      color: white;
+      text-decoration: none;
+    }
+    .info a:hover {
+      color: rgba(25, 255, 157, 1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <canvas id="c"></canvas>
+
+  <span class="loading">Loading...</span>
+
+  <div class="info">
+    <a href="https://anuraghazra.github.io">created by @anuraghazra</a>
+    <br>
+    <a href="https://github.com/anuraghazra/CanvasFun">give the project a star on github</a>
+  </div>
+
+  <script src="./Particle.js"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>
