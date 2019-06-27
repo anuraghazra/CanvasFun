@@ -7,48 +7,27 @@ window.onload = function () {
   let lerpValue = document.getElementById('lerpValue');
   let propsDOM = document.getElementsByClassName('props')[0];
   let nodesDom = document.getElementsByClassName('nodes')[0];
- 
+
   let keyframeData = [
     {
       name: 'left',
       keyframes: [
-        {
-          value: '200px', offset : 0.0,
-        },
-        {
-          value: '700px', offset: 1.0
-        }
+        { value: '200px', offset: 0.0 },
       ]
     },
     {
       name: 'top',
       keyframes: [
-        // {
-        //   value: '0px', offset : 0,
-        // },
+        { value: '0px', offset: 0.0 },
       ]
     },
     {
       name: 'borderRadius',
-      keyframes: [
-        {
-          value: '0px', offset : 0.0,
-        },
-        {
-          value: '10px', offset : 1.0,
-        },
-      ]
+      keyframes: []
     },
     {
       name: 'transform',
-      keyframes: [
-        {
-          value: 'rotate(0deg)', offset : 0.0,
-        },
-        {
-          value: 'rotate(360deg)', offset : 1.0,
-        },
-      ]
+      keyframes: []
     },
   ];
 
@@ -62,10 +41,10 @@ window.onload = function () {
   nodes.render(props);
 
 
-  let duration = 1000;
+  let duration = 500;
   animated = object.animate(keyframes, {
     duration: duration,
-    fill: 'none',
+    fill: 'forwards',
     easing: 'linear'
   });
 
@@ -76,7 +55,7 @@ window.onload = function () {
   timeline.addEventListener('mousemove', function (e) {
     pos.x = e.offsetX;
     pos.y = e.offsetY;
-    if(down) animate();
+    if (down) animate();
   });
 
 
@@ -88,16 +67,16 @@ window.onload = function () {
 
     // Dragger Values
     let draggerPos = (dragger.getBoundingClientRect().left - timeline.getBoundingClientRect().left);
-   
+
     draggerInterpolate = clamp(norm(draggerPos, 0, timeline.getBoundingClientRect().width), 0, 1)
     lerpValue.innerText = draggerInterpolate.toFixed(2);
 
     animated.pause()
-    animated.currentTime = draggerInterpolate*duration;
+    animated.currentTime = draggerInterpolate * duration;
 
     props.update(object, draggerInterpolate);
-    let newKeyframe = props.updateValues(keyframeData, function(arr) {
-      console.log('new data' , arr)
+    let newKeyframe = props.updateValues(keyframeData, function (arr) {
+      console.log('new data', arr)
       arr = ParseKeyframeData(arr);
       nodesDom.innerHTML = ''
       let nodes = new Nodes(arr, nodesDom, timeline)
@@ -109,8 +88,8 @@ window.onload = function () {
         easing: 'linear'
       });
     })
-    
-    
+
+
   }
 
 }

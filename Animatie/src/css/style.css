@@ -36,8 +36,7 @@ body,html {
 
 .test-box {
   position: absolute;
-  top: 50%;
-  left: 50%;
+
   font-family: 'Century Gothic';
   font-weight: bold;
   color: rgb(109, 155, 255);
@@ -48,6 +47,7 @@ body,html {
   border-radius: 10px;
   border: 3px solid rgb(146, 180, 255);
   text-align: center;
+  animation-fill-mode: forwards;
 }
 
 .props {

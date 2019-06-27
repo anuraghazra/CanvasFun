@@ -2,9 +2,9 @@ class Window {
   constructor(x, y) {
     this.pos = new Vector(x, y);
     this.vel = Vector.random2D().mult(10);
-    this.acc = new Vector(0, 0);
+    this.acc = new Vector(0, 1);
 
-    this.win = window.window.open("", Math.random(), "resizable=1, menubar=yes");
+    this.win = window.window.open("", Math.random(), "resizable=1, menubar=false, width=100, height=200");
     this.win.moveTo(this.pos.x, this.pos.y);
     this.win.focus()
     this.width = this.win.outerWidth;
@@ -36,6 +36,10 @@ class Window {
 
     return !(left >= oright ||
       right <= oleft)
+  }
+
+  setPos(x, y) {
+    this.win.moveTo(x, y);
   }
 
   update() {
