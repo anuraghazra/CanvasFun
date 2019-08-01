@@ -1,5 +1,17 @@
 [
   {
+    "title" : "Slime",
+    "demo" : "https://anuraghazra.github.io/Slime/",
+    "src" : "https://github.com/anuraghazra/Slime",
+    "img" : "https://anuraghazra.github.io/CanvasFun/thumbnails/slime_400x400-min.png"
+  },
+  {
+    "title" : "Parasites",
+    "demo" : "https://anuraghazra.github.io/parasites/",
+    "src" : "https://github.com/anuraghazra/parasites",
+    "img" : "https://anuraghazra.github.io/CanvasFun/thumbnails/parasites_400x400-min.png"
+  },
+  {
     "title" : "10PrintLine",
     "demo" : "https://anuraghazra.github.io/CanvasFun/10PrintLine",
     "src" : "https://github.com/anuraghazra/CanvasFun/tree/master/10PrintLine",
@@ -57,7 +69,7 @@
     "title" : "phyllotaxis",
     "demo" : "https://anuraghazra.github.io/CanvasFun/phyllotaxis",
     "src" : "https://github.com/anuraghazra/CanvasFun/tree/master/phyllotaxis",
-    "img" : "https://anuraghazra.github.io/CanvasFun/thumbnails/phyllotaxis_400x400-min.gif"
+    "img" : "https://anuraghazra.github.io/CanvasFun/thumbnails/phyllotaxis_400x400-min.png"
   },
   {
     "title" : "smartRockets",
