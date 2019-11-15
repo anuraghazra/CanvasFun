@@ -1,6 +1,9 @@
 [submodule "mswlogo"]
   path = mswlogo
-  url = git@github.com:anuraghazra/classicLogo.git
+  url = https://github.com/anuraghazra/classicLogo.git
 [submodule "evolutionAquarium"]
   path = evolutionAquarium
-  url = git@github.com:anuraghazra/EvolutionAquerium.git
+  url = https://github.com/anuraghazra/EvolutionAquerium.git
+[submodule "FlockingBlackHole"]
+  path = FlockingBlackHole
+  url = https://github.com/anuraghazra/FlockingBlackHole.git
