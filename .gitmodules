@@ -4,6 +4,3 @@
 [submodule "evolutionAquarium"]
   path = evolutionAquarium
   url = git@github.com:anuraghazra/EvolutionAquerium.git
-[submodule "FlockingBlackHole"]
-	path = FlockingBlackHole
-	url = git@github.com:anuraghazra/FlockingBlackHole.git
