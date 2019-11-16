@@ -14,8 +14,8 @@ jobs:
         node-version: "10.x"
 
     - name: npm install, generate readme
-      run: |
-        npm ci
-        npm run readme-gen
+      run: ./push.sh
       env:
         CI: true
+        PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        GH_REPO: ${{ secrets.GH_REPO }}
