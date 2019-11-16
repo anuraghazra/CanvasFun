@@ -1,0 +1,21 @@
+name: Generate Readme
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: "10.x"
+
+    - name: npm install, generate readme
+      run: |
+        npm ci
+        npm run readme-gen
+      env:
+        CI: true
