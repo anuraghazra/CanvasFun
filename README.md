@@ -13,7 +13,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/collatzSunrise/">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/collatzsunrise_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/collatzSunrise/"/><br />
-<small><b>collatzSunrise</b></small>
+<sup><b>collatzSunrise</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/collatzSunrise">
@@ -23,7 +23,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/Slime/">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/slime_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/Slime/"/><br />
-<small><b>Slime</b></small>
+<sup><b>Slime</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/Slime">
@@ -33,7 +33,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/parasites/">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/parasites_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/parasites/"/><br />
-<small><b>Parasites</b></small>
+<sup><b>Parasites</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/parasites">
@@ -43,7 +43,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/10PrintLine">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/10printline_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/10PrintLine"/><br />
-<small><b>10PrintLine</b></small>
+<sup><b>10PrintLine</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/10PrintLine">
@@ -53,7 +53,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/ChaosGame">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/chaosgame_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/ChaosGame"/><br />
-<small><b>ChaosGame</b></small>
+<sup><b>ChaosGame</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/ChaosGame">
@@ -63,7 +63,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/circlePattern">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/circlepattern-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/circlePattern"/><br />
-<small><b>CirclePattern</b></small>
+<sup><b>CirclePattern</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/circlePattern">
@@ -74,7 +74,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/fireworks">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/fireworks_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/fireworks"/><br />
-<small><b>Fireworks</b></small>
+<sup><b>Fireworks</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/fireworks">
@@ -84,7 +84,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/EvolutionAquerium/">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/evolutionAquerium_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/EvolutionAquerium/"/><br />
-<small><b>Evolution Aquerium</b></small>
+<sup><b>Evolution Aquerium</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/EvolutionAquerium/">
@@ -94,7 +94,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/fractalTree">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/frataltree_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/fractalTree"/><br />
-<small><b>FractalTree</b></small>
+<sup><b>FractalTree</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/fractalTree">
@@ -104,7 +104,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/isometric3D">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/isometric3d_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/isometric3D"/><br />
-<small><b>Isometric3D</b></small>
+<sup><b>Isometric3D</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/isometric3D">
@@ -114,7 +114,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/particleShift">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/particleshift_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/particleShift"/><br />
-<small><b>particleShift</b></small>
+<sup><b>particleShift</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/particleShift">
@@ -124,7 +124,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/particleSystem">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/particlesystem_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/particleSystem"/><br />
-<small><b>particleSystem</b></small>
+<sup><b>particleSystem</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/particleSystem">
@@ -135,7 +135,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/phyllotaxis">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/phyllotaxis_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/phyllotaxis"/><br />
-<small><b>phyllotaxis</b></small>
+<sup><b>phyllotaxis</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/phyllotaxis">
@@ -145,7 +145,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/smartRockets">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/smartrockets400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/smartRockets"/><br />
-<small><b>smartRockets</b></small>
+<sup><b>smartRockets</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/smartRockets">
@@ -155,7 +155,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/snowFlake">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/snowflake_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/snowFlake"/><br />
-<small><b>snowFlake</b></small>
+<sup><b>snowFlake</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/snowFlake">
@@ -165,7 +165,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/KochStar">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/kochStar_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/KochStar"/><br />
-<small><b>KochStar</b></small>
+<sup><b>KochStar</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/KochStar">
@@ -175,7 +175,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/TextParticles">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/imageParticle_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/TextParticles"/><br />
-<small><b>TextParticles</b></small>
+<sup><b>TextParticles</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/TextParticles">
@@ -185,7 +185,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/sevenSegmentDisplay">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/7segment_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/sevenSegmentDisplay"/><br />
-<small><b>7SegmentDisplay</b></small>
+<sup><b>7SegmentDisplay</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/sevenSegmentDisplay">
@@ -196,7 +196,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/LSystemCreator">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/lsystemcreator_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/LSystemCreator"/><br />
-<small><b>L-SystemCreator</b></small>
+<sup><b>L-SystemCreator</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/LSystemCreator">
@@ -206,7 +206,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/LoveHearts/">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/loveHearts_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/LoveHearts/"/><br />
-<small><b>Love Hearts</b></small>
+<sup><b>Love Hearts</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/LoveHearts">
@@ -216,7 +216,7 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/infiniteTriangles">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/infinitetrig_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/infiniteTriangles"/><br />
-<small><b>InfiniteTriangles</b></small>
+<sup><b>InfiniteTriangles</b></sup>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/infiniteTriangles">
