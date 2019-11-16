@@ -1,6 +1,9 @@
 name: Generate Readme
 
-on: [push]
+on:
+  push:
+    branches:    
+      - master
 
 jobs:
   build:
