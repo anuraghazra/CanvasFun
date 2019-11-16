@@ -13,214 +13,214 @@ Most of the projects i made in my fun times.
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/collatzSunrise/">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/collatzsunrise_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/collatzSunrise/"/><br />
-<sub><b>collatzSunrise</b></sub>
+<small><b>collatzSunrise</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/collatzSunrise">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <td align="center">
 <a href="https://anuraghazra.github.io/Slime/">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/slime_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/Slime/"/><br />
-<sub><b>Slime</b></sub>
+<small><b>Slime</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/Slime">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <td align="center">
 <a href="https://anuraghazra.github.io/parasites/">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/parasites_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/parasites/"/><br />
-<sub><b>Parasites</b></sub>
+<small><b>Parasites</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/parasites">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/10PrintLine">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/10printline_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/10PrintLine"/><br />
-<sub><b>10PrintLine</b></sub>
+<small><b>10PrintLine</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/10PrintLine">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/ChaosGame">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/chaosgame_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/ChaosGame"/><br />
-<sub><b>ChaosGame</b></sub>
+<small><b>ChaosGame</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/ChaosGame">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/circlePattern">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/circlepattern-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/circlePattern"/><br />
-<sub><b>CirclePattern</b></sub>
+<small><b>CirclePattern</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/circlePattern">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <tr>
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/fireworks">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/fireworks_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/fireworks"/><br />
-<sub><b>Fireworks</b></sub>
+<small><b>Fireworks</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/fireworks">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <td align="center">
 <a href="https://anuraghazra.github.io/EvolutionAquerium/">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/evolutionAquerium_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/EvolutionAquerium/"/><br />
-<sub><b>Evolution Aquerium</b></sub>
+<small><b>Evolution Aquerium</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/EvolutionAquerium/">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/fractalTree">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/frataltree_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/fractalTree"/><br />
-<sub><b>FractalTree</b></sub>
+<small><b>FractalTree</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/fractalTree">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/isometric3D">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/isometric3d_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/isometric3D"/><br />
-<sub><b>Isometric3D</b></sub>
+<small><b>Isometric3D</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/isometric3D">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/particleShift">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/particleshift_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/particleShift"/><br />
-<sub><b>particleShift</b></sub>
+<small><b>particleShift</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/particleShift">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/particleSystem">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/particlesystem_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/particleSystem"/><br />
-<sub><b>particleSystem</b></sub>
+<small><b>particleSystem</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/particleSystem">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <tr>
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/phyllotaxis">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/phyllotaxis_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/phyllotaxis"/><br />
-<sub><b>phyllotaxis</b></sub>
+<small><b>phyllotaxis</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/phyllotaxis">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/smartRockets">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/smartrockets400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/smartRockets"/><br />
-<sub><b>smartRockets</b></sub>
+<small><b>smartRockets</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/smartRockets">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/snowFlake">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/snowflake_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/snowFlake"/><br />
-<sub><b>snowFlake</b></sub>
+<small><b>snowFlake</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/snowFlake">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/KochStar">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/kochStar_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/KochStar"/><br />
-<sub><b>KochStar</b></sub>
+<small><b>KochStar</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/KochStar">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/TextParticles">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/imageParticle_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/TextParticles"/><br />
-<sub><b>TextParticles</b></sub>
+<small><b>TextParticles</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/TextParticles">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/sevenSegmentDisplay">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/7segment_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/sevenSegmentDisplay"/><br />
-<sub><b>7SegmentDisplay</b></sub>
+<small><b>7SegmentDisplay</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/sevenSegmentDisplay">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <tr>
 <td align="center">
 <a href="https://anuraghazra.github.io/LSystemCreator">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/lsystemcreator_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/LSystemCreator"/><br />
-<sub><b>L-SystemCreator</b></sub>
+<small><b>L-SystemCreator</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/LSystemCreator">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/LoveHearts/">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/loveHearts_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/LoveHearts/"/><br />
-<sub><b>Love Hearts</b></sub>
+<small><b>Love Hearts</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/LoveHearts">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 <td align="center">
 <a href="https://anuraghazra.github.io/CanvasFun/infiniteTriangles">
 <img src="https://anuraghazra.github.io/CanvasFun/thumbnails/infinitetrig_400x400-min.png" width="100px" alt="https://anuraghazra.github.io/CanvasFun/infiniteTriangles"/><br />
-<sub><b>InfiniteTriangles</b></sub>
+<small><b>InfiniteTriangles</b></small>
 </a>
 <br />
 <a href="https://github.com/anuraghazra/CanvasFun/tree/master/infiniteTriangles">
-<img width="15px;" src="./thumbnails/github_icon.png" />
+<img width="18px;" src="./thumbnails/github_icon.png" />
 </a>
 </td>
 

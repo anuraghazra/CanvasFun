@@ -41,11 +41,11 @@ function generateTable(data) {
     <td align="center">
       <a href="${jsonData[i].demo}">
         <img src="${jsonData[i].img}" width="100px" alt="${jsonData[i].demo}"/><br />
-        <sub><b>${jsonData[i].title}</b></sub>
+        <small><b>${jsonData[i].title}</b></small>
       </a>
       <br />
       <a href="${jsonData[i].src}">
-        <img width="15px;" src="./thumbnails/github_icon.png" />
+        <img width="18px;" src="./thumbnails/github_icon.png" />
       </a>
       </td>
     `
