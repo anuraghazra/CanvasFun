@@ -1,5 +1,11 @@
 [
   {
+    "title" : "collatzSunrise 2",
+    "demo" : "https://anuraghazra.github.io/CanvasFun/collatzSunrise/",
+    "src" : "https://github.com/anuraghazra/CanvasFun/tree/master/collatzSunrise",
+    "img" : "https://anuraghazra.github.io/CanvasFun/thumbnails/collatzsunrise_400x400-min.png"
+  },
+  {
     "title" : "collatzSunrise",
     "demo" : "https://anuraghazra.github.io/CanvasFun/collatzSunrise/",
     "src" : "https://github.com/anuraghazra/CanvasFun/tree/master/collatzSunrise",
