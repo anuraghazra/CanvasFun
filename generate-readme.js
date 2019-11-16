@@ -40,7 +40,7 @@ function generateTable(data) {
     let markup = `
     <td align="center">
       <a href="${jsonData[i].demo}">
-        <img src="${jsonData[i].img}" width="100px" alt="${jsonData[i].demo}"/><br />
+        <img src="${jsonData[i].img}" width="150px" alt="${jsonData[i].demo}"/><br />
         <sup><b>${jsonData[i].title}</b></sup>
       </a>
       <br />
