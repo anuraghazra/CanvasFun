@@ -13,6 +13,13 @@ jobs:
       with:
         node-version: "10.x"
 
+    - name: npm install, generate readme
+      run: |
+        npm ci
+        npm run readme-gen
+      env:
+        CI: true
+
     - name: Run Script
       uses: skx/github-action-tester@master
       with:
@@ -21,7 +28,7 @@ jobs:
         CI: true
         PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         GH_REPO: ${{ secrets.GH_REPO }}
-        
+
     # - name: npm install, generate readme
     #   run: ./push.sh
     #   env:

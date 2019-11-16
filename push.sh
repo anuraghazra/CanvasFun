@@ -2,10 +2,6 @@
 set -x
 set -e
 
-cd /
-npm ci
-node ./generate-readme.js
-
 export BRANCH_NAME=updated-readme
 git --version
 git config --global user.email "hazru.anurag@gmail.com"
