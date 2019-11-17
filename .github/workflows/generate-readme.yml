@@ -20,6 +20,7 @@ jobs:
       run: |
         npm ci
         npm run readme-gen
+        npm run subdir-readme-gen
       env:
         CI: true
 
