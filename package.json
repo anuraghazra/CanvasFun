@@ -4,7 +4,8 @@
   "description": "Creative Coding Projects",
   "main": "app.js",
   "scripts": {
-    "readme-gen": "node generate-readme.js"
+    "readme-gen": "node generate-readme.js",
+    "subdir-readme-gen": "node generate-folder-readmes.js"
   },
   "repository": {
     "type": "git",
