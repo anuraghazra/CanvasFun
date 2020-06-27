@@ -37,13 +37,13 @@ window.onload = function () {
   let t = 0;
 
   function animate() {
-    // t += 0.05;
+    t += 0.05;
     // t += 0.1;
 
     for (let i = 0; i < windows.length; i++) {
-      windows[i].update();
+      // windows[i].update();
       // windows[i].setPos(windows[i].pos.x, HEIGHT / 2 + Math.cos(t + i/2) * 50)
-      // windows[i].setPos(WIDTH / 2 + Math.cos(t + i) * mouse.y, HEIGHT / 2 + Math.sin(t + i) * mouse.x)
+      windows[i].setPos(WIDTH / 2 + Math.cos(t + i) * mouse.y, HEIGHT / 2 + Math.sin(t + i) * mouse.x)
     }
 
     requestAnimationFrame(animate);

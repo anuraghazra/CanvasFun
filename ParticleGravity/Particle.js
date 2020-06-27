@@ -2,10 +2,10 @@
 class Particle {
   constructor(x, y, mass) {
     this.pos = new Vector(x || random(CANVAS_WIDTH), y || random(CANVAS_HEIGHT));
-    this.vel = new Vector(0, random(-2, 2));
+    this.vel = new Vector(0, random(-5, 5));
     this.acc = new Vector(0, 0);
     this.mass = mass || 1;
-    this.maxSpeed = 10;
+    this.maxSpeed = 8;
   }
 
   edges() {
@@ -33,27 +33,27 @@ class Particle {
   }
 
   attracted(target) {
-    const G = 1;
+    const G = 2;
     let desire = Vector.sub(target.pos, this.pos);
     let dSq = desire.magSq();
-    let strength = G * ((target.mass*this.mass) / (dSq));
+    let strength = G * ((target.mass * this.mass) / (dSq));
     desire.normalize()
-    desire.setMag(strength);
-    
+    desire.setMag(strength * 0.4);
+
     this.applyForce(desire);
-  
+
     // let grav = new Vector(0, 0);
     // let dist = Vector.dist(target.pos, this.pos);
 
     // grav.rotate(target.pos.heading());
     // grav.mult(target.mass / (dist*dist));
-    
+
   }
 
   render() {
     c.noStroke();
     c.fill(255);
-    c.circle(this.pos.x, this.pos.y, 2);
+    c.circle(this.pos.x, this.pos.y, 4);
   };
 }
 
@@ -67,6 +67,6 @@ class Attractor extends Particle {
   render() {
     c.noStroke();
     c.fill(0, 255, 100);
-    c.circle(this.pos.x, this.pos.y, 5);
+    c.circle(this.pos.x, this.pos.y, 8);
   }
 }

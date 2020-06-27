@@ -8,13 +8,13 @@ window.onload = function () {
 
   c.canvas.addEventListener('mousedown', function (e) {
     if (e.which == 1) {
-      particles.push(new Particle(e.offsetX, e.offsetY));    
+      particles.push(new Particle(e.offsetX, e.offsetY));
     }
     if (e.which == 2) {
-      attractors.push(new Attractor(e.offsetX, e.offsetY, 1000));    
+      attractors.push(new Attractor(e.offsetX, e.offsetY, 1000));
     }
   });
-  
+
 
   function animate() {
     c.clear(35);
@@ -26,7 +26,7 @@ window.onload = function () {
       //   p.attracted(p)
       // }
       for (const a of attractors) {
-        p.attracted(a); 
+        p.attracted(a);
         a.attracted(p);
       }
       p.update();
