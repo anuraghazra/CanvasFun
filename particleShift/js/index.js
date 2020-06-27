@@ -5,7 +5,7 @@ const c = new Candy(canvas, canvas.width, canvas.height);
 
 const text = document.getElementById("text");
 const params = new URLSearchParams(window.location.search);
-text.value = params.get("text_value");
+text.value = params.get("text_value") || "have ↓ Fun";
 
 const updateQueryParam = () => {
   params.set("text_value", text.value);
