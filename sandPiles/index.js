@@ -1,50 +1,53 @@
-
 let sandpile = [];
 
 function setup() {
-  createCanvas(200, 200);
+  createCanvas(40, 40);
 
-  sandpile = [...Array(width)].map(e => Array(width).fill(0));
+  sandpile = [...Array(width)].map((e) => Array(width).fill(1));
 }
 
 function topple() {
-  let nextpile = [...Array(width)].map(e => Array(width).fill(0));
   for (let x = 0; x < width; x++) {
     for (let y = 0; y < height; y++) {
       let num = sandpile[x][y];
-      if (num < 1) {
-        nextpile[x][y] = num;
+      let dx = random() > 0.5 ? -1 : 1;
+      if (num >= 2) {
+        const isNextEmpty =
+          sandpile[x][y + 1] !== undefined && sandpile[x][y + 1] == 1;
+        if (isNextEmpty) {
+          sandpile[x][y + 1] = 2;
+          sandpile[x][y] = 1;
+          break;
+        } else if (
+          !isNextEmpty &&
+          sandpile[x + dx]?.[y + 1] !== undefined &&
+          sandpile[x + dx]?.[y + 1] == 1
+        ) {
+          sandpile[x + dx][y + 1] = 2;
+          sandpile[x][y] = 1;
+        }
       }
     }
   }
-  for (let x = 0; x < width; x++) {
-    for (let y = 0; y < height; y++) {
-      let num = sandpile[x][y];
-      if (num >= 1) {
-        nextpile[x][y] += num - 1;
-        if (x + 1 < width) {
-          nextpile[x + 1][y]++;
-        }
-        if (x - 1 >= 0) {
-          nextpile[x - 1][y]++;
-        }
-        if (y + 1 < height && nextpile[x][y + 1] < sandpile[x][y + 1]) {
-          nextpile[x][y + 1]++;
-        }
-        // if (y-1 >= 0) nextpile[x][y-1]++;
-      }
-    }
-  }
-  sandpile = nextpile;
 }
-
 
 function mousePressed() {
-  sandpile[floor(mouseX)][floor(mouseY)] = 1;
+  try {
+    sandpile[floor(mouseX)][floor(mouseY)] = 2;
+  } catch (e) {
+    console.log(e);
+  }
 }
 
+let t = 0;
 function draw() {
+  t++;
   background(25);
+
+  if (t % 10 == 0) {
+    sandpile[floor(20)][floor(5)] = 2;
+    t = 0;
+  }
 
   loadPixels();
   for (let x = 0; x < width; x++) {
@@ -52,15 +55,18 @@ function draw() {
       let num = sandpile[x][y];
 
       let col = [255, 255, 255];
-      if (num == 0) {
-        col = [25, 25, 25];
+      if (num == 2) {
+        col = [188, 100, 50];
       }
-      set(x, y, color.apply(null, col))
+      set(x, y, color.apply(null, col));
     }
   }
   updatePixels();
-
-  for (let i = 0; i < 10; i++) {
-    topple();
-  }
+  // for (let x = 0; x < sandpile.length; x++) {
+  //   for (let y = 0; y < sandpile[x].length; y++) {
+  //     fill(255);
+  //     rect(x * 20, y * 20, 5, 5);
+  //   }
+  // }
+  topple();
 }

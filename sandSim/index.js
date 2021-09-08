@@ -22,15 +22,19 @@ function setup() {
 
   rows = width / 2;
   cols = height / 2;
-  console.log({ rows, cols })
+  console.log({ rows, cols });
   cellGrid = generateCellGrid();
 }
 
 function mousePressed() {
-  cellGrid[floor(mouseY / gridCellSize)][floor(mouseX / gridCellSize)].setType(SAND);
+  cellGrid[floor(mouseY / gridCellSize)][floor(mouseX / gridCellSize)].setType(
+    SAND
+  );
 }
 function mouseDragged() {
-  cellGrid[floor(mouseY / gridCellSize)][floor(mouseX / gridCellSize)].setType(SAND);
+  cellGrid[floor(mouseY / gridCellSize)][floor(mouseX / gridCellSize)].setType(
+    SAND
+  );
 }
 
 class CellGrid {
@@ -42,13 +46,12 @@ class CellGrid {
   }
 
   checkEdges(x, y) {
-    if (y + 1 > (this.magic - 1)) {
+    if (y + 1 > this.magic - 1) {
       this.grid[y][x].setType(SAND);
     }
     // check screen right
-    if (x + 1 > (this.magic - 1)) {
+    if (x + 1 > this.magic - 1) {
       this.grid[y][x].setType(SAND);
-      continue;
     }
   }
 
@@ -56,78 +59,76 @@ class CellGrid {
     for (let y = this.cols - 1; y >= 0; y--) {
       for (let x = 0; x < this.rows; x++) {
         let cell = this.grid[y][x];
-        this.checkEdges(x, y)
+        this.checkEdges(x, y);
       }
     }
   }
 }
 
-
 function simulate() {
   // let newCellGrid = []
   newCellGrid = generateCellGrid();
-  let cellGrid = new CellGrid(newCellGrid, rows, cols)
+  let cellGrid = new CellGrid(newCellGrid, rows, cols);
 
-  cell.update()
+  cell.update();
 
-  // for (let y = cols - 1; y >= 0; y--) {
-  //   for (let x = 0; x < rows; x++) {
-  //     let cell = cellGrid[y][x];
-  //     if (cell.type === EMPTY) {
-  //       const magic = (rows * 2) / 10;
-  //       // check screen bottom
-  //       if (y + 1 > (magic - 1)) {
-  //         newCellGrid[y][x].setType(SAND);
-  //       }
-  //       // check screen right
-  //       if (x + 1 > (magic - 1)) {
-  //         newCellGrid[y][x].setType(SAND);
-  //         continue;
-  //       }
-  //       // check screen left
-  //       if (x < 0) {
-  //         newCellGrid[y][x].setType(SAND);
-  //         continue;
-  //       }
+  for (let y = cols - 1; y >= 0; y--) {
+    for (let x = 0; x < rows; x++) {
+      let cell = cellGrid[y][x];
+      if (cell.type === EMPTY) {
+        const magic = (rows * 2) / 10;
+        // check screen bottom
+        if (y + 1 > magic - 1) {
+          newCellGrid[y][x].setType(SAND);
+        }
+        // check screen right
+        if (x + 1 > magic - 1) {
+          newCellGrid[y][x].setType(SAND);
+          continue;
+        }
+        // check screen left
+        if (x < 0) {
+          newCellGrid[y][x].setType(SAND);
+          continue;
+        }
 
+        let nextDown = newCellGrid[y + 1];
 
-  //       let nextDown = newCellGrid[y + 1];
+        // if next cell is empty move there
+        if (nextDown && nextDown[x].type == EMPTY) {
+          nextDown[x].setType(SAND);
+          continue;
+        }
 
-  //       // if next cell is empty move there
-  //       if (nextDown && nextDown[x].type == EMPTY) {
-  //         nextDown[x].setType(SAND);
-  //         continue
-  //       }
-
-  //       if (nextDown && nextDown[x - 1] && nextDown[x - 1].type == EMPTY) {
-  //         // if (newCellGrid[y] && newCellGrid[y][x - 1] == EMPTY) {
-  //         //   newCellGrid[y][x] = EMPTY;
-  //         //   newCellGrid[y][x - 1] = SAND;
-  //         // }
-  //         nextDown[x - 1].setType(SAND);
-  //         continue
-  //       } else if (nextDown && nextDown[x + 1] == EMPTY) {
-  //         // if (newCellGrid[y] && newCellGrid[y][x + 1] == EMPTY) {
-  //         //   newCellGrid[y][x] = EMPTY;
-  //         //   newCellGrid[y][x + 1] = SAND;
-  //         // }
-  //         nextDown[x + 1].setType(SAND);
-  //         continue
-  //       } else {
-  //         newCellGrid[y][x].setType(SAND)
-  //         continue
-  //       }
-  //     }
-  //   }
-  // }
+        if (nextDown && nextDown[x - 1] && nextDown[x - 1].type == EMPTY) {
+          // if (newCellGrid[y] && newCellGrid[y][x - 1] == EMPTY) {
+          //   newCellGrid[y][x] = EMPTY;
+          //   newCellGrid[y][x - 1] = SAND;
+          // }
+          nextDown[x - 1].setType(SAND);
+          continue;
+        } else if (nextDown && nextDown[x + 1] == EMPTY) {
+          // if (newCellGrid[y] && newCellGrid[y][x + 1] == EMPTY) {
+          //   newCellGrid[y][x] = EMPTY;
+          //   newCellGrid[y][x + 1] = SAND;
+          // }
+          nextDown[x + 1].setType(SAND);
+          continue;
+        } else {
+          newCellGrid[y][x].setType(SAND);
+          continue;
+        }
+      }
+    }
+  }
 
   cellGrid = newCellGrid;
 }
 
 function draw() {
   background(35);
-  simulate()
-  frameRate(60)
+  simulate();
+  frameRate(60);
   noStroke();
   for (let y = 0; y < cols; y++) {
     for (let x = 0; x < rows; x++) {

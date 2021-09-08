@@ -1,30 +1,30 @@
-let c = new Candy('#c', 500, 500);
+let c = new Candy("#c", 500, 500);
 let width = CANVAS_WIDTH;
 let height = CANVAS_HEIGHT;
 let points = [];
 let maxParticles = 10;
 let pointSize = 6;
 
-c.createScreenBuffer('osc');
+c.createScreenBuffer("osc");
 let osc = c.screenBuffers.osc;
 
 window.onload = function () {
-  let url = 'https://anuraghazra.github.io/CanvasFun/TextParticles/src/images/mypic.jpg';
+  let url =
+    "https://anuraghazra.dev/CanvasFun/TextParticles/src/images/mypic.jpg";
 
   let mouse = new Vector(0, 0);
 
-
   let img = c.loadImage(url);
-  img.setAttribute('crossOrigin', '');
+  img.setAttribute("crossOrigin", "");
   c.trypreload();
   c.preload = function () {
     animate();
-  }
+  };
 
   c.noStroke();
   let count = 1;
   function animate() {
-    c.clear('#151515');
+    c.clear("#151515");
 
     mouse.setXY(mouseX, mouseY);
 
@@ -40,6 +40,4 @@ window.onload = function () {
     }
     c.loop(animate);
   }
-
-}
-
+};
