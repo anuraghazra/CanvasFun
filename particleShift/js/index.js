@@ -35,8 +35,8 @@ const config = {
   fontFamily: fonts["Fugaz One"],
 };
 
-const windowWidth = window.innerWidth;
-const windowHeight = window.innerHeight;
+let windowWidth = window.innerWidth;
+let windowHeight = window.innerHeight;
 
 window.onload = function () {
   // DAT.GUI
